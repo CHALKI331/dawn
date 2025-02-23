@@ -1,6 +1,7 @@
 {% comment %}
-  Hexagon Tessellating Grid Section with 3 rows and 4 columns.
-  Every even row is offset for a perfect honeycomb pattern.
+  Hexagon Tessellating Grid Section
+  Displays a honeycomb grid with 3 rows and 4 columns, no gaps.
+  Each hexagon initially loads a random image from active products.
 {% endcomment %}
 <div class="hexagon-grid">
   {% assign row_count = 3 %}
@@ -26,12 +27,12 @@
     {% endfor %}
   ];
 
-  // Helper function to get a random element from an array
+  // Helper function to pick a random image
   function randomFromArray(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  // On page load, assign each hexagon a random image
+  // On page load, assign a random image to each hexagon
   document.addEventListener('DOMContentLoaded', function() {
     var hexagonImages = document.querySelectorAll('.hexagon img');
     hexagonImages.forEach(function(img) {

@@ -87,8 +87,56 @@
         "padding_bottom": 0
       }
     },
+    "collection_list_wTKwdP": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_89hphC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-camouflage-models"
+          }
+        },
+        "featured_collection_WbgXAe": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-mud-models"
+          }
+        },
+        "featured_collection_ne4CRU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-accessories"
+          }
+        },
+        "featured_collection_6k8jfw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-professionally-built"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_89hphC",
+        "featured_collection_WbgXAe",
+        "featured_collection_ne4CRU",
+        "featured_collection_6k8jfw"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "scheme-2",
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "all",
         "products_to_show": 8,
@@ -249,6 +297,7 @@
   "order": [
     "image_banner",
     "rich_text",
+    "collection_list_wTKwdP",
     "featured_collection",
     "video",
     "multicolumn",

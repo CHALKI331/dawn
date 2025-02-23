@@ -3597,17 +3597,16 @@ details-disclosure > details {
 }
 
 .hexagon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2mm;
+  /* Optional: center the grid if needed */
+  justify-items: center;
 }
 
 .hexagon {
-  width: 200px;
-  height: 173.2px; /* Calculated for a regular hexagon: height = width * sqrt(3)/2 */
-  position: relative;
+  width: 150px;  /* Adjust as needed */
+  height: calc(150px * 0.866); /* ~86.6% of width for a regular hexagon */
   overflow: hidden;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background-color: #f9f9f9;
@@ -3617,34 +3616,4 @@ details-disclosure > details {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-}
-
-.hexagon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: -10px;
-}
-
-.hexagon {
-  width: 150px;
-  height: 130px; /* Adjust this value if needed */
-  margin: 10px;
-  overflow: hidden;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-}
-
-/* Ensure images cover the hexagon */
-.hexagon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Create a tessellating effect by offsetting every other row.
-   Here, we use a transform on every odd hexagon.
-   (You might need to adjust this based on your exact layout.) */
-.hexagon:nth-child(odd) {
-  transform: translateY(65px);
 }

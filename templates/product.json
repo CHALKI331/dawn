@@ -232,14 +232,20 @@
     },
     "1740310033dcd137d5": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "17403107214c70d42d": {
+      "type": "apps",
       "blocks": {
-        "easyreviews_product_review_9JF6kL": {
-          "type": "shopify://apps/easyreviews/blocks/product_review/1341251b-09d7-46f3-ba6a-e732a50e97a5",
+        "judge_me_reviews_review_widget_3HgGJh": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         }
       },
       "block_order": [
-        "easyreviews_product_review_9JF6kL"
+        "judge_me_reviews_review_widget_3HgGJh"
       ],
       "settings": {
         "include_margins": true
@@ -251,6 +257,7 @@
     "image-with-text",
     "multicolumn",
     "related-products",
-    "1740310033dcd137d5"
+    "1740310033dcd137d5",
+    "17403107214c70d42d"
   ]
 }

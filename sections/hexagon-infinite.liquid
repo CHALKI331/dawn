@@ -1,8 +1,8 @@
 {% comment %}
-  Infinite Random Honeycomb Grid
-  - Displays 4 rows of gap-free, perfectly tessellated hexagons.
-  - Each hexagon shows a random product image and links to its product page.
-  - Each row’s content is duplicated for seamless infinite scrolling.
+  Infinite Honeycomb Grid Section
+  - 4 fixed rows in a perfect tessellated honeycomb (no gaps)
+  - Each hexagon shows a random product image (assigned via JS) and links to its product page.
+  - Each row’s content is duplicated for seamless horizontal scrolling.
 {% endcomment %}
 
 {% assign products_array = collections.all.products %}
@@ -17,20 +17,18 @@
 ]
 {% endcapture %}
 
+{% assign hexagons_per_row = 12 %}
+
 <div class="hexagon-scroll-container">
   <div class="hexagon-grid">
-    {% assign total_rows = 4 %}
-    {% assign hexagons_per_row = 12 %}
-    {% for row in (0..total_rows-1) %}
-      <div class="hexagon-row row-{{ row }}">
+    {% for row in (0..3) %}
+      <div class="hexagon-row row-{{ row }}" data-row="{{ row }}">
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
           </a>
         {% endfor %}
-        {%- comment -%}
-          Duplicate the row for infinite scrolling
-        {%- endcomment -%}
+        {%- comment -%} Duplicate row for infinite scroll {% endcomment -%}
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
@@ -42,15 +40,15 @@
 </div>
 
 <script>
-  // Parse the product data JSON into a JavaScript array.
+  // Parse the product data JSON captured from Liquid
   var productData = {{ product_data_json | strip_newlines }};
   
-  // Helper function: returns a random product object.
+  // Helper function to return a random product object
   function getRandomProduct() {
     return productData[Math.floor(Math.random() * productData.length)];
   }
   
-  // On DOMContentLoaded, assign a random product to each hexagon.
+  // On DOM load, assign each hexagon a random product's image and URL
   document.addEventListener('DOMContentLoaded', function() {
     var hexagons = document.querySelectorAll('.hexagon');
     hexagons.forEach(function(hex) {
@@ -63,7 +61,7 @@
     });
   });
   
-  // Every 5 seconds, update one random hexagon with a new random product.
+  // Optionally, update one random hexagon every 5 seconds
   function updateRandomHexagon() {
     var hexagons = document.querySelectorAll('.hexagon');
     var randomIndex = Math.floor(Math.random() * hexagons.length);
@@ -80,11 +78,11 @@
 
 {% schema %}
 {
-  "name": "InfHexRandom",
+  "name": "InfHex",
   "settings": [],
   "presets": [
     {
-      "name": "InfHexRandom",
+      "name": "InfHex",
       "category": "Custom"
     }
   ]

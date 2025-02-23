@@ -3596,65 +3596,45 @@ details-disclosure > details {
   }
 }
 
-.hexagon-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2mm; /* 2mm gap between rows */
-}
-
-.hexagon-row {
-  display: flex;
-  gap: 2mm; /* 2mm gap between hexagons horizontally */
-}
-
-/* Container for the entire grid */
-.hexagon-grid {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-/* Each row: no gap between hexagons */
-.hexagon-row {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
 /* Container for horizontal scrolling */
 .hexagon-scroll-container {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
-/* Each row is a horizontal flex container with no gaps */
+/* Each row is a flex container with no gap */
 .hexagon-row {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-/* Offset the second row by half the hexagon width (75px if width is 150px) */
+/* Offset even rows by half the hexagon width (half of 150px = 75px) */
 .hexagon-row.offset {
   transform: translateX(75px);
 }
 
-/* Each hexagon (no external gap) */
+/* Each hexagon: no gap, perfect honeycomb shape */
 .hexagon {
   width: 150px;
-  height: calc(150px * 0.866); /* Regular hexagon height */
+  height: calc(150px * 0.866); /* Approximately 129.9px for a regular hexagon */
   flex-shrink: 0;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background-color: #f9f9f9;
 }
 
-/* Ensure images fill the hexagon completely */
+/* Ensure the image fills the hexagon entirely */
 .hexagon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  margin: 0;
+  padding: 0;
 }

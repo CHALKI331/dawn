@@ -79,7 +79,7 @@
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
-            "content": "",
+            "content": "<p> </p>",
             "page": ""
           }
         },
@@ -88,7 +88,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "",
+            "content": "<p><strong>PLA</strong></p><p>Temperature:<br/>Keep it cool! PLA starts to soften at around 60°C (140°F), so avoid placing it near heat sources or leaving it in hot cars.<br/><br/>Sunlight:<br/>Prolonged direct sunlight can cause fading and potential deformation. Try to keep it out of long sun exposures.<br/><br/>Cleaning:<br/>Gently wash with warm water and a bit of mild soap using a soft cloth. No harsh scrubbing, please!<br/><br/>Handling:<br/>Handle with care—avoid excessive bending or dropping it, as PLA is rigid and can crack or break.<br/><br/>Storage:<br/>Store in a cool, dry place to maintain its shape and longevity.<br/><br/><strong>TPU</strong></p><p>Temperature:<br/>TPU is built to be flexible, but still avoid extreme or prolonged heat. It’s more resilient than PLA, but unnecessary heat can still degrade it over time.<br/><br/>Sunlight:<br/>Try not to leave TPU items in direct sunlight for too long, as UV rays can fade the colors and slowly affect the material quality.<br/><br/>Cleaning:<br/>Just like PLA, a quick clean with warm water and mild soap works great. Use a soft cloth and don’t be too rough.<br/><br/>Handling:<br/>Enjoy its flexibility! However, even though TPU can bend, continuous stretching or heavy impacts might wear it out faster.<br/><br/>Storage:<br/>Keep it in a cool, dry spot away from harsh elements to maintain its flexibility and appearance.</p>",
             "page": ""
           }
         },

@@ -3653,7 +3653,7 @@ details-disclosure > details {
 
 /* Perfect hexagon shape */
 .hexagon {
-  width: 150px;
+  width: 130px;
   height: 130px;
   flex-shrink: 0;
   margin: 0;

@@ -1,9 +1,9 @@
 {% comment %}
-  Infinite Hexagon Honeycomb with Individual Random Fades
-  - Displays 4 rows of perfectly tessellated hexagons (150px x 130px) with no gaps.
-  - Each hexagon shows a random product image and links to its product page.
-  - Each hexagon updates its image (with a fade transition) at a random interval between 5-10 seconds.
-  - The grid auto-scrolls horizontally infinitely.
+  Infinite Pointy-Topped Honeycomb Grid
+  - 4 rows of gap-free, tessellated pointy-topped hexagons.
+  - Each hexagon is 130px wide × 150px tall, displaying a random product image that links to its product page.
+  - Each row is duplicated for seamless infinite horizontal scrolling.
+  - All hexagons update via a crossfade transition at a random interval between 5–10 seconds.
 {% endcomment %}
 
 {% assign products_array = collections.all.products %}
@@ -23,15 +23,13 @@
 <div class="hexagon-scroll-container">
   <div class="hexagon-grid">
     {% for row in (0..3) %}
-      <div class="hexagon-row" data-row="{{ row }}">
+      <div class="hexagon-row row-{{ row }}" data-row="{{ row }}">
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
           </a>
         {% endfor %}
-        {%- comment -%}
-          Duplicate row for seamless scrolling
-        {%- endcomment -%}
+        {%- comment -%} Duplicate row for seamless scrolling {% endcomment -%}
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
@@ -43,51 +41,87 @@
 </div>
 
 <script>
-  // Parse product data from Liquid into a JS array.
+  // Parse product data from Liquid.
   var productData = {{ product_data_json | strip_newlines }};
   
-  // Helper: returns a random product object.
+  // Helper: Returns a random product object.
   function getRandomProduct() {
     return productData[Math.floor(Math.random() * productData.length)];
   }
   
-  // Schedules an update for a given hexagon with fade-out/in transitions.
-  function scheduleHexUpdate(hex) {
-    var delay = Math.floor(Math.random() * 5000) + 5000; // Random delay between 5000 and 10000 ms.
+  // Function to perform a crossfade update on a given hexagon.
+  function crossfadeHexagon(hex) {
+    var oldImg = hex.querySelector('img');
+    var product = getRandomProduct();
+    hex.href = product.url;
+    
+    // Create new image element.
+    var newImg = document.createElement('img');
+    newImg.src = product.image;
+    newImg.alt = "Product Image";
+    newImg.style.position = "absolute";
+    newImg.style.top = "0";
+    newImg.style.left = "0";
+    newImg.style.width = "100%";
+    newImg.style.height = "100%";
+    newImg.style.objectFit = "cover";
+    newImg.style.opacity = 0;
+    newImg.style.transition = "opacity 1s ease-in-out";
+    
+    // Append new image and force reflow.
+    hex.appendChild(newImg);
+    void newImg.offsetWidth; // Force reflow
+    
+    // Fade new image in and old image out concurrently.
+    newImg.style.opacity = 1;
+    oldImg.style.transition = "opacity 1s ease-in-out";
+    oldImg.style.opacity = 0;
+    
+    // After the transition, remove the old image.
     setTimeout(function() {
-      // Fade out:
-      hex.style.opacity = 0;
-      // After fade-out completes (500ms), update image/link and fade back in.
+      if (oldImg.parentNode === hex) {
+        hex.removeChild(oldImg);
+      }
+    }, 1000);
+  }
+  
+  // Schedule crossfade updates on all hexagons at random intervals.
+  function scheduleUpdates() {
+    var hexagons = document.querySelectorAll('.hexagon');
+    hexagons.forEach(function(hex) {
+      // Schedule a random delay between 5000ms and 10000ms.
+      var delay = Math.floor(Math.random() * 5000) + 5000;
       setTimeout(function() {
-        var product = getRandomProduct();
-        hex.href = product.url;
-        var img = hex.querySelector('img');
-        if (img) {
-          img.src = product.image;
-        }
-        hex.style.opacity = 1;
-        // Reschedule this hexagon.
-        scheduleHexUpdate(hex);
-      }, 500);
+        crossfadeHexagon(hex);
+        // Reschedule the update for this hexagon.
+        scheduleUpdateForHex(hex);
+      }, delay);
+    });
+  }
+  
+  function scheduleUpdateForHex(hex) {
+    var delay = Math.floor(Math.random() * 5000) + 5000;
+    setTimeout(function() {
+      crossfadeHexagon(hex);
+      scheduleUpdateForHex(hex);
     }, delay);
   }
   
   document.addEventListener('DOMContentLoaded', function() {
+    // On load, assign random product to each hexagon.
     var hexagons = document.querySelectorAll('.hexagon');
     hexagons.forEach(function(hex) {
-      // Set a random product on load:
       var product = getRandomProduct();
       hex.href = product.url;
       var img = hex.querySelector('img');
       if (img) {
         img.src = product.image;
       }
-      // Set initial opacity and transition.
-      hex.style.opacity = 1;
-      hex.style.transition = "opacity 0.5s ease-in-out";
-      // Schedule its first update.
-      scheduleHexUpdate(hex);
+      // Ensure initial opacity is set.
+      hex.querySelector('img').style.opacity = 1;
     });
+    // Start scheduling updates for each hexagon.
+    scheduleUpdates();
   });
 </script>
 

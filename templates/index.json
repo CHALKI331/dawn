@@ -154,7 +154,7 @@
           "type": "column",
           "settings": {
             "title": "Affordable Customisation",
-            "text": "<p>Any model we don't stock can be created in a short time to fulfil your planning needs. For models that are not currently available, we offer a timely creation service to satisfy your planning needs.</p>",
+            "text": "<p>Any model we don't stock can be created in a <strong>short time</strong> to fulfil your planning needs. For models that are not currently available, we offer a <strong>timely creation service</strong> to satisfy your planning needs.</p>",
             "link_label": "",
             "link": ""
           }
@@ -163,7 +163,7 @@
           "type": "column",
           "settings": {
             "title": "Portable and Durable Designs",
-            "text": "<p>We supply environmentally conscious materials (PLA) that decompose sustainably and resilient materials (TPU) that resist extreme pressure and heat.</p>",
+            "text": "<p>We supply environmentally conscious materials (PLA) that <strong>decompose</strong> sustainably and <strong>resilient</strong> materials (TPU) that resist extreme pressure and heat.</p>",
             "link_label": "",
             "link": ""
           }

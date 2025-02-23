@@ -3595,3 +3595,27 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.hexagon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.hexagon {
+  width: 200px;
+  height: 173.2px; /* Calculated for a regular hexagon: height = width * sqrt(3)/2 */
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #f9f9f9;
+}
+
+.hexagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

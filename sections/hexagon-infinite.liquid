@@ -1,6 +1,105 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %}
+  Hexagon Infinite Scroll Section
+  Displays three rows of hexagons that form a honeycomb pattern with no gaps.
+  Each hexagon is a clickable link to a product page.
+  The product list is duplicated to simulate infinite horizontal scrolling.
+{% endcomment %}
+
+<div class="hexagon-scroll-container">
+  <!-- Row 1 (non-offset) -->
+  <div class="hexagon-row">
+    {% for product in collections.all.products %}
+      {% assign mod_result = forloop.index0 | modulo: 3 %}
+      {% if mod_result == 0 %}
+        <a href="{{ product.url }}" class="hexagon">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+    {% for product in collections.all.products %}
+      {% assign mod_result = forloop.index0 | modulo: 3 %}
+      {% if mod_result == 0 %}
+        <a href="{{ product.url }}" class="hexagon">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Row 2 (offset) -->
+  <div class="hexagon-row offset">
+    {% for product in collections.all.products %}
+      {% assign mod_result = forloop.index0 | modulo: 3 %}
+      {% if mod_result == 1 %}
+        <a href="{{ product.url }}" class="hexagon">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+    {% for product in collections.all.products %}
+      {% assign mod_result = forloop.index0 | modulo: 3 %}
+      {% if mod_result == 1 %}
+        <a href="{{ product.url }}" class="hexagon">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Row 3 (non-offset) -->
+  <div class="hexagon-row">
+    {% for product in collections.all.products %}
+      {% assign mod_result = forloop.index0 | modulo: 3 %}
+      {% if mod_result == 2 %}
+        <a href="{{ product.url }}" class="hexagon">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+    {% for product in collections.all.products %}
+      {% assign mod_result = forloop.index0 | modulo: 3 %}
+      {% if mod_result == 2 %}
+        <a href="{{ product.url }}" class="hexagon">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  // JavaScript: Build an array of product image URLs from active products
+  var productImages = [
+    {% for product in collections.all.products %}
+      {% if product.featured_image %}
+        "{{ product.featured_image | img_url: 'medium' }}"{% unless forloop.last %}, {% endunless %}
+      {% endif %}
+    {% endfor %}
+  ];
+
+  // Helper function to get a random element from an array
+  function randomFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
   }
+
+  // Update a random hexagon image every 3 seconds
+  function updateRandomHexagon() {
+    var hexagonImages = document.querySelectorAll('.hexagon img');
+    var randomHexIndex = Math.floor(Math.random() * hexagonImages.length);
+    hexagonImages[randomHexIndex].src = randomFromArray(productImages);
+  }
+  setInterval(updateRandomHexagon, 3000);
+</script>
+
+{% schema %}
+{
+  "name": "Infinite Hexagon Grid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Infinite Hexagon Grid",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}

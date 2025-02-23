@@ -3597,16 +3597,24 @@ details-disclosure > details {
 }
 
 .hexagon-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2mm;
-  /* Optional: center the grid if needed */
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm; /* 2mm gap between rows */
+}
+
+.hexagon-row {
+  display: flex;
+  gap: 2mm; /* 2mm gap between hexagons horizontally */
+}
+
+/* Offset every even row by half the hexagon width (75px if hexagon width is 150px) */
+.hexagon-row:nth-child(even) {
+  margin-left: 75px;
 }
 
 .hexagon {
-  width: 150px;  /* Adjust as needed */
-  height: calc(150px * 0.866); /* ~86.6% of width for a regular hexagon */
+  width: 150px; 
+  height: calc(150px * 0.866); /* Approximately 129.9px for a regular hexagon */
   overflow: hidden;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background-color: #f9f9f9;

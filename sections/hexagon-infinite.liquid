@@ -1,9 +1,9 @@
 {% comment %}
-  Infinite Hexagon Honeycomb (4 rows)
-  - Displays 4 rows of gap-free, tessellated hexagons (150px x 130px).
-  - Each hexagon is a clickable link to its product page.
-  - Each row's content is duplicated for seamless infinite horizontal scrolling.
-  - All hexagons get a random product image on load and update every 5 seconds.
+  Infinite Hexagon Honeycomb with Individual Random Fades
+  - Displays 4 rows of perfectly tessellated hexagons (150px x 130px) with no gaps.
+  - Each hexagon shows a random product image and links to its product page.
+  - Each hexagon updates its image (with a fade transition) at a random interval between 5-10 seconds.
+  - The grid auto-scrolls horizontally infinitely.
 {% endcomment %}
 
 {% assign products_array = collections.all.products %}
@@ -29,6 +29,9 @@
             <img src="" alt="Product Image">
           </a>
         {% endfor %}
+        {%- comment -%}
+          Duplicate row for seamless scrolling
+        {%- endcomment -%}
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
@@ -40,30 +43,51 @@
 </div>
 
 <script>
-  // Parse product data from Liquid into an array.
+  // Parse product data from Liquid into a JS array.
   var productData = {{ product_data_json | strip_newlines }};
   
-  // Helper: Return a random product object from productData.
+  // Helper: returns a random product object.
   function getRandomProduct() {
     return productData[Math.floor(Math.random() * productData.length)];
   }
   
-  // Update all hexagons with random product data.
-  function updateAllHexagons() {
+  // Schedules an update for a given hexagon with fade-out/in transitions.
+  function scheduleHexUpdate(hex) {
+    var delay = Math.floor(Math.random() * 5000) + 5000; // Random delay between 5000 and 10000 ms.
+    setTimeout(function() {
+      // Fade out:
+      hex.style.opacity = 0;
+      // After fade-out completes (500ms), update image/link and fade back in.
+      setTimeout(function() {
+        var product = getRandomProduct();
+        hex.href = product.url;
+        var img = hex.querySelector('img');
+        if (img) {
+          img.src = product.image;
+        }
+        hex.style.opacity = 1;
+        // Reschedule this hexagon.
+        scheduleHexUpdate(hex);
+      }, 500);
+    }, delay);
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
     var hexagons = document.querySelectorAll('.hexagon');
     hexagons.forEach(function(hex) {
+      // Set a random product on load:
       var product = getRandomProduct();
       hex.href = product.url;
       var img = hex.querySelector('img');
       if (img) {
         img.src = product.image;
       }
+      // Set initial opacity and transition.
+      hex.style.opacity = 1;
+      hex.style.transition = "opacity 0.5s ease-in-out";
+      // Schedule its first update.
+      scheduleHexUpdate(hex);
     });
-  }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    updateAllHexagons(); // Set random images on page load.
-    setInterval(updateAllHexagons, 5000); // Update all hexagons every 5 seconds.
   });
 </script>
 

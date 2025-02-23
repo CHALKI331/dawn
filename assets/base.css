@@ -3597,21 +3597,21 @@ details-disclosure > details {
 }
 
 /* 
-  Container: fixes the overall area for the infinite scroll.
-  The height is set to exactly fit 3 rows of hexagons.
-  For a hexagon with width 10vw, height = 8.66vw.
-  In a honeycomb, vertical offset per row = 0.75 * hexagon height ≈ 6.495vw.
-  Total container height = hexagon height + 2*(0.75*hexagon height) = 8.66vw + 12.99vw ≈ 21.65vw.
+  Container for the infinite scrolling honeycomb.
+  Here, we use fixed pixel dimensions.
+  For a hexagon of width 150px, the height should be 150 * sqrt(3)/2 ≈ 130px.
+  In a honeycomb, vertical center-to-center spacing is 0.75 * hexagon height = 97.5px.
+  With 3 rows, the total container height = top of row 0 (0) + (row 2 top + hexagon height) = 195px + 130px = 325px.
 */
 .hexagon-scroll-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 21.65vw;
-  background-color: #000; /* Adjust background as needed */
+  height: 325px;
+  background-color: #000; /* background behind hexagons (adjust as needed) */
 }
 
-/* The grid holds all rows and is duplicated in width for seamless scrolling */
+/* The grid spans double width for infinite scroll */
 .hexagon-grid {
   position: absolute;
   top: 0;
@@ -3620,7 +3620,7 @@ details-disclosure > details {
   animation: scroll-left 60s linear infinite;
 }
 
-/* Each row is absolutely positioned within the container */
+/* Each row is absolutely positioned */
 .hexagon-row {
   position: absolute;
   display: flex;
@@ -3628,41 +3628,34 @@ details-disclosure > details {
   padding: 0;
 }
 
-/* Row positions:
-   - Row 0: top at 0, no horizontal offset.
-   - Row 1: top at 6.495vw, offset right by half hexagon width (5vw).
-   - Row 2: top at 12.99vw, no horizontal offset.
-*/
+/* Position rows based on center-to-center spacing (97.5px) */
 .hexagon-row[data-row="0"] {
-  top: 0;
+  top: 0; /* row 0 starts at top 0 */
   left: 0;
 }
 .hexagon-row[data-row="1"] {
-  top: 6.495vw;
-  left: 5vw;
+  top: 97.5px;  /* row 1's top */
+  left: 75px;   /* offset by half the hexagon width (150/2 = 75px) */
 }
 .hexagon-row[data-row="2"] {
-  top: 12.99vw;
+  top: 195px;   /* row 2's top (0 + 2*97.5) */
   left: 0;
 }
 
-/* Hexagon dimensions and shape:
-   - Set width to 10vw; height to 8.66vw (10 * 0.866) for a perfect equilateral hexagon.
-   - No margin between hexagons.
-   - clip-path defines a regular hexagon.
-*/
+/* Hexagon shape: 150px width, 130px height */
 .hexagon {
-  width: 10vw;
-  height: 8.66vw;
+  width: 150px;
+  height: 130px;
   flex-shrink: 0;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  /* clip-path for a perfect regular hexagon */
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background-color: #f9f9f9;
 }
 
-/* Ensure the image fills the hexagon perfectly */
+/* Ensure images fill the hexagon */
 .hexagon img,
 .hexagon .placeholder {
   width: 100%;

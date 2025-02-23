@@ -1,0 +1,50 @@
+{% comment %}
+  Hexagon Tessellating Grid Section
+  Displays a grid of hexagons (12 items) whose images randomly update every 3 seconds.
+{% endcomment %}
+<div class="hexagon-grid">
+  {% comment %} Output 12 hexagons with an initial image (using the first active product as default) {% endcomment %}
+  {% for i in (1..12) %}
+    <div class="hexagon">
+      <img src="{{ collections.all.products.first.featured_image | img_url: 'medium' }}" alt="Product Image">
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  // Build an array of product image URLs from all active products
+  var productImages = [
+    {% for product in collections.all.products %}
+      {% if product.featured_image %}
+        "{{ product.featured_image | img_url: 'medium' }}"{% unless forloop.last %}, {% endunless %}
+      {% endif %}
+    {% endfor %}
+  ];
+
+  // Select all hexagon images on the page
+  var hexagonImages = document.querySelectorAll('.hexagon img');
+
+  // Function: Update a random hexagon with a random image from productImages
+  function updateRandomHexagon() {
+    if (productImages.length === 0 || hexagonImages.length === 0) return;
+    var randomHexIndex = Math.floor(Math.random() * hexagonImages.length);
+    var randomImgIndex = Math.floor(Math.random() * productImages.length);
+    hexagonImages[randomHexIndex].src = productImages[randomImgIndex];
+  }
+
+  // Update one random hexagon every 3 seconds
+  setInterval(updateRandomHexagon, 3000);
+</script>
+
+{% schema %}
+{
+  "name": "Hexagon Tessellating Grid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Hexagon Tessellating Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

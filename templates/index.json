@@ -9,10 +9,6 @@
  */
 {
   "sections": {
-    "hexagon_tessellating_ybqdgQ": {
-      "type": "hexagon-tessellating",
-      "settings": {}
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -85,11 +81,15 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
+    },
+    "hexagon_tessellating_ybqdgQ": {
+      "type": "hexagon-tessellating",
+      "settings": {}
     },
     "collection_list_wTKwdP": {
       "type": "collection-list",

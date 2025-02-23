@@ -3596,22 +3596,20 @@ details-disclosure > details {
   }
 }
 
-/* 
-  Container for the infinite scrolling honeycomb.
-  Here, we use fixed pixel dimensions.
-  For a hexagon of width 150px, the height should be 150 * sqrt(3)/2 ≈ 130px.
-  In a honeycomb, vertical center-to-center spacing is 0.75 * hexagon height = 97.5px.
-  With 3 rows, the total container height = top of row 0 (0) + (row 2 top + hexagon height) = 195px + 130px = 325px.
-*/
+/* Container that masks the scrolling grid.
+   Calculated for 4 rows:
+   Each hexagon is 150px wide and 130px tall.
+   Vertical center-to-center spacing in a honeycomb = 0.75 * 130 ≈ 97.5px.
+   Total container height = 130 + (3 * 97.5) ≈ 422.5px (we round to 423px). */
 .hexagon-scroll-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 325px;
-  background-color: #000; /* background behind hexagons (adjust as needed) */
+  height: 423px;
+  /* Remove any background-color to use the default theme background */
 }
 
-/* The grid spans double width for infinite scroll */
+/* The grid spans twice the container width for seamless infinite scrolling */
 .hexagon-grid {
   position: absolute;
   top: 0;
@@ -3620,7 +3618,8 @@ details-disclosure > details {
   animation: scroll-left 60s linear infinite;
 }
 
-/* Each row is absolutely positioned */
+/* Each row is positioned absolutely.
+   We'll have 4 rows (data-row 0 to 3) arranged vertically with center-to-center spacing of 97.5px. */
 .hexagon-row {
   position: absolute;
   display: flex;
@@ -3628,21 +3627,33 @@ details-disclosure > details {
   padding: 0;
 }
 
-/* Position rows based on center-to-center spacing (97.5px) */
+/* Row positioning:
+   Row 0: top: 0; no horizontal offset.
+   Row 1: top: 97.5px; offset by half hexagon width (75px).
+   Row 2: top: 195px (97.5 * 2); no offset.
+   Row 3: top: 292.5px (97.5 * 3); offset by 75px.
+*/
 .hexagon-row[data-row="0"] {
-  top: 0; /* row 0 starts at top 0 */
+  top: 0;
   left: 0;
 }
 .hexagon-row[data-row="1"] {
-  top: 97.5px;  /* row 1's top */
-  left: 75px;   /* offset by half the hexagon width (150/2 = 75px) */
+  top: 97.5px;
+  left: 75px;
 }
 .hexagon-row[data-row="2"] {
-  top: 195px;   /* row 2's top (0 + 2*97.5) */
+  top: 195px;
   left: 0;
 }
+.hexagon-row[data-row="3"] {
+  top: 292.5px;
+  left: 75px;
+}
 
-/* Hexagon shape: 150px width, 130px height */
+/* Hexagon shape:
+   Set width = 150px; height = 130px (150 * 0.866 ≈ 130) for a perfect equilateral hexagon.
+   No margin between hexagons ensures a gapless tessellation.
+*/
 .hexagon {
   width: 150px;
   height: 130px;
@@ -3650,12 +3661,11 @@ details-disclosure > details {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* clip-path for a perfect regular hexagon */
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: #f9f9f9;
+  background-color: transparent;
 }
 
-/* Ensure images fill the hexagon */
+/* Ensure images fill each hexagon completely */
 .hexagon img,
 .hexagon .placeholder {
   width: 100%;
@@ -3664,7 +3674,7 @@ details-disclosure > details {
   display: block;
 }
 
-/* Keyframes for infinite horizontal scroll */
+/* Infinite horizontal scrolling animation */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -3673,3 +3683,4 @@ details-disclosure > details {
     transform: translateX(-50%);
   }
 }
+

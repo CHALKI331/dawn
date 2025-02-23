@@ -2,7 +2,11 @@
   <div class="hexagon-grid">
     {% for product in collections.all.products %}
       <a href="{{ product.url }}" class="hexagon">
-        <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+        {% else %}
+          <div class="placeholder">No Image</div>
+        {% endif %}
       </a>
     {% endfor %}
   </div>

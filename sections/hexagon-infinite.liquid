@@ -1,39 +1,99 @@
 {% comment %}
-  Infinite Honeycomb Grid Section
-  - Displays 4 rows of hexagons in a perfect tessellated honeycomb.
-  - Each hexagon shows a product’s featured image (or a placeholder) and links to its product page.
-  - Each row’s content is duplicated for seamless infinite horizontal scrolling.
+  Infinite Hexagon Honeycomb
+  - 4 fixed rows in a perfect honeycomb layout (no gaps)
+  - Each hexagon is clickable and displays a product’s featured image
+  - Each row is duplicated for seamless horizontal scrolling
 {% endcomment %}
 
 <div class="hexagon-scroll-container">
   <div class="hexagon-grid">
-    {% assign rows = 4 %}
-    {% assign products = collections.all.products %}
-    {% for row in (0..rows-1) %}
-      <div class="hexagon-row" data-row="{{ row }}">
-        {% for product in products %}
-          <a href="{{ product.url }}" class="hexagon">
-            {% if product.featured_image %}
-              <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
-            {% else %}
-              <div class="placeholder">No Image</div>
-            {% endif %}
-          </a>
-        {% endfor %}
-        {%- comment -%}
-          Duplicate the row for seamless scrolling.
-        {%- endcomment -%}
-        {% for product in products %}
-          <a href="{{ product.url }}" class="hexagon">
-            {% if product.featured_image %}
-              <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
-            {% else %}
-              <div class="placeholder">No Image</div>
-            {% endif %}
-          </a>
-        {% endfor %}
-      </div>
-    {% endfor %}
+    <!-- Row 0 -->
+    <div class="hexagon-row row-0">
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Row 1 -->
+    <div class="hexagon-row row-1">
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Row 2 -->
+    <div class="hexagon-row row-2">
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Row 3 -->
+    <div class="hexagon-row row-3">
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+      {% for product in collections.all.products %}
+        <a href="{{ product.url }}" class="hexagon">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+          {% else %}
+            <div class="placeholder">No Image</div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
 

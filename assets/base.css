@@ -3603,17 +3603,16 @@ details-disclosure > details {
   --row-offset: calc(var(--hex-width) / 2); /* 75px */
 }
 
-/* Container height for 4 rows:
+/* Container height to snugly hold 4 rows:
    Total height = hex-height + 3 * vertical-spacing = 130 + 3*97.5 = 422.5px */
 .hexagon-scroll-container {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 422.5px;
-  /* No background color defined: use theme defaults */
 }
 
-/* The grid is double width for seamless infinite scroll */
+/* The grid is set to 200% width for seamless infinite scroll */
 .hexagon-grid {
   position: absolute;
   top: 0;
@@ -3622,35 +3621,40 @@ details-disclosure > details {
   animation: scroll-left 60s linear infinite;
 }
 
-/* Define each row; we manually position 4 rows */
+/* Define 4 rows; duplicate content is in the HTML */
 .hexagon-row {
   position: absolute;
   display: flex;
-  width: 200%; /* duplicate row content */
+  width: 200%;
   height: var(--hex-height);
   margin: 0;
   padding: 0;
 }
 
-/* Row positions */
-.row-0 {
+/* Position rows for a perfect honeycomb layout:
+   - Row 0: top = 0, no horizontal offset.
+   - Row 1: top = 97.5px, offset left = 75px.
+   - Row 2: top = 195px, no offset.
+   - Row 3: top = 292.5px, offset left = 75px.
+*/
+.hexagon-row.row-0 {
   top: 0;
   left: 0;
 }
-.row-1 {
+.hexagon-row.row-1 {
   top: var(--vertical-spacing);
   left: var(--row-offset);
 }
-.row-2 {
-  top: calc(var(--vertical-spacing) * 2);
+.hexagon-row.row-2 {
+  top: calc(2 * var(--vertical-spacing));
   left: 0;
 }
-.row-3 {
-  top: calc(var(--vertical-spacing) * 3);
+.hexagon-row.row-3 {
+  top: calc(3 * var(--vertical-spacing));
   left: var(--row-offset);
 }
 
-/* Hexagon shape (perfect equilateral hexagon) */
+/* Hexagon shape: a perfect equilateral hexagon */
 .hexagon {
   width: var(--hex-width);
   height: var(--hex-height);
@@ -3662,7 +3666,7 @@ details-disclosure > details {
   background-color: transparent;
 }
 
-/* Ensure images fill the hexagon exactly */
+/* Ensure images fill the hexagon */
 .hexagon img,
 .hexagon .placeholder {
   width: 100%;
@@ -3671,7 +3675,7 @@ details-disclosure > details {
   display: block;
 }
 
-/* Infinite horizontal scroll animation */
+/* Horizontal infinite scroll animation */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);

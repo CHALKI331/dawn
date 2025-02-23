@@ -61,7 +61,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "",
+            "content": "<p>PLA - This solid filament is used to make models that are a refined representation with rigid properties.<br/><br/>TPU - This flexible filament holds the shape of the model and can with stand being twisted and squashed to survive the field environment.</p>",
             "page": ""
           }
         },
@@ -70,7 +70,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "truck",
-            "content": "",
+            "content": "<p>Shipping times can be requested to meet your requirements.</p><p>All items are shipped from Townsville, QLD.</p><p>Shipping World Wide!</p>",
             "page": ""
           }
         },

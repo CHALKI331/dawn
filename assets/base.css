@@ -3622,27 +3622,39 @@ details-disclosure > details {
   padding: 0;
 }
 
-/* Offset every even row by half the hexagon width (75px if hexagon width is 150px) */
-.hexagon-row:nth-child(even) {
+/* Container for horizontal scrolling */
+.hexagon-scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* Each row is a horizontal flex container with no gaps */
+.hexagon-row {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Offset the second row by half the hexagon width (75px if width is 150px) */
+.hexagon-row.offset {
   transform: translateX(75px);
 }
 
-/* Each hexagon has no external margin */
+/* Each hexagon (no external gap) */
 .hexagon {
   width: 150px;
-  height: calc(150px * 0.866); /* 150 * 0.866 ≈ 129.9px for a regular hexagon */
+  height: calc(150px * 0.866); /* Regular hexagon height */
+  flex-shrink: 0;
   overflow: hidden;
-  /* Using a regular hexagon shape with clip-path */
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background-color: #f9f9f9;
 }
 
-/* Ensure the image covers the hexagon completely */
+/* Ensure images fill the hexagon completely */
 .hexagon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  margin: 0;
-  padding: 0;
 }

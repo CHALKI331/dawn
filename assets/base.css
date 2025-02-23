@@ -3596,56 +3596,82 @@ details-disclosure > details {
   }
 }
 
-/* Container for horizontal scrolling */
+/* 
+  Container: fixes the overall area for the infinite scroll.
+  The height is set to exactly fit 3 rows of hexagons.
+  For a hexagon with width 10vw, height = 8.66vw.
+  In a honeycomb, vertical offset per row = 0.75 * hexagon height ≈ 6.495vw.
+  Total container height = hexagon height + 2*(0.75*hexagon height) = 8.66vw + 12.99vw ≈ 21.65vw.
+*/
 .hexagon-scroll-container {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   width: 100%;
-  height: calc(100vw * 0.57735); /* Height based on width to maintain aspect ratio */
+  height: 21.65vw;
+  background-color: #000; /* Adjust background as needed */
 }
 
+/* The grid holds all rows and is duplicated in width for seamless scrolling */
 .hexagon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 200%; /* Adjust based on the number of products */
-  animation: scroll-left 20s linear infinite;
-}
-
-.hexagon {
-  width: 10vw; /* Adjust size as needed */
-  padding-bottom: 8.66vw; /* Height = width * sqrt(3)/2 */
-  position: relative;
-  margin: -1px; /* Adjust to remove gaps */
-  clip-path: polygon(
-    50% 0%,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0% 75%,
-    0% 25%
-  );
-  overflow: hidden;
-}
-
-.hexagon img,
-.hexagon .placeholder {
   position: absolute;
   top: 0;
   left: 0;
+  width: 200%;
+  animation: scroll-left 60s linear infinite;
+}
+
+/* Each row is absolutely positioned within the container */
+.hexagon-row {
+  position: absolute;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Row positions:
+   - Row 0: top at 0, no horizontal offset.
+   - Row 1: top at 6.495vw, offset right by half hexagon width (5vw).
+   - Row 2: top at 12.99vw, no horizontal offset.
+*/
+.hexagon-row[data-row="0"] {
+  top: 0;
+  left: 0;
+}
+.hexagon-row[data-row="1"] {
+  top: 6.495vw;
+  left: 5vw;
+}
+.hexagon-row[data-row="2"] {
+  top: 12.99vw;
+  left: 0;
+}
+
+/* Hexagon dimensions and shape:
+   - Set width to 10vw; height to 8.66vw (10 * 0.866) for a perfect equilateral hexagon.
+   - No margin between hexagons.
+   - clip-path defines a regular hexagon.
+*/
+.hexagon {
+  width: 10vw;
+  height: 8.66vw;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #f9f9f9;
+}
+
+/* Ensure the image fills the hexagon perfectly */
+.hexagon img,
+.hexagon .placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.hexagon .placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ccc;
-  color: #fff;
-  font-size: 1em;
-}
-
+/* Keyframes for infinite horizontal scroll */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);

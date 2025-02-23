@@ -1,13 +1,68 @@
 <div class="hexagon-scroll-container">
   <div class="hexagon-grid">
-    {% for product in collections.all.products %}
-      <a href="{{ product.url }}" class="hexagon">
-        {% if product.featured_image %}
-          <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
-        {% else %}
-          <div class="placeholder">No Image</div>
-        {% endif %}
-      </a>
+    {% assign rows = 3 %}
+    {% assign products = collections.all.products %}
+    {% for row in (0..rows-1) %}
+      <div class="hexagon-row" data-row="{{ row }}">
+        {% for product in products %}
+          <a href="{{ product.url }}" class="hexagon">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+            {% else %}
+              <div class="placeholder">No Image</div>
+            {% endif %}
+          </a>
+        {% endfor %}
+        {%- comment -%}
+          Duplicate the row to enable seamless infinite scrolling
+        {%- endcomment -%}
+        {% for product in products %}
+          <a href="{{ product.url }}" class="hexagon">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
+            {% else %}
+              <div class="placeholder">No Image</div>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
     {% endfor %}
   </div>
 </div>
+
+<script>
+  // Build an array of product image URLs from all active products
+  var productImages = [
+    {% for product in collections.all.products %}
+      {% if product.featured_image %}
+        "{{ product.featured_image | img_url: '400x400' }}"{% unless forloop.last %}, {% endunless %}
+      {% endif %}
+    {% endfor %}
+  ];
+
+  // Helper function to get a random element from an array
+  function randomFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  // Update one random hexagon image every 3 seconds
+  function updateRandomHexagon() {
+    var hexagonImages = document.querySelectorAll('.hexagon img');
+    var randomHexIndex = Math.floor(Math.random() * hexagonImages.length);
+    hexagonImages[randomHexIndex].src = randomFromArray(productImages);
+  }
+  setInterval(updateRandomHexagon, 3000);
+</script>
+
+{% schema %}
+{
+  "name": "Infinite Hexagons",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Infinite Hexagons",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

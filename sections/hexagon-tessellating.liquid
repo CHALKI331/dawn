@@ -1,12 +1,17 @@
 {% comment %}
-  Hexagon Tessellating Grid Section
-  Displays 12 hexagons arranged in a 4x3 grid with 2mm gaps.
-  Each hexagon starts with a random image from active products.
+  Hexagon Tessellating Grid Section with 3 rows and 4 columns.
+  Every even row is offset for a perfect honeycomb pattern.
 {% endcomment %}
 <div class="hexagon-grid">
-  {% for i in (1..12) %}
-    <div class="hexagon">
-      <img src="" alt="Product Image">
+  {% assign row_count = 3 %}
+  {% assign col_count = 4 %}
+  {% for row in (1..row_count) %}
+    <div class="hexagon-row">
+      {% for col in (1..col_count) %}
+        <div class="hexagon">
+          <img src="" alt="Product Image">
+        </div>
+      {% endfor %}
     </div>
   {% endfor %}
 </div>
@@ -26,7 +31,7 @@
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  // On page load, assign a random image to each hexagon
+  // On page load, assign each hexagon a random image
   document.addEventListener('DOMContentLoaded', function() {
     var hexagonImages = document.querySelectorAll('.hexagon img');
     hexagonImages.forEach(function(img) {
@@ -34,7 +39,7 @@
     });
   });
 
-  // Update a random hexagon every 3 seconds with a new random image
+  // Every 3 seconds, update a random hexagon with a new random image
   function updateRandomHexagon() {
     var hexagonImages = document.querySelectorAll('.hexagon img');
     var randomHexIndex = Math.floor(Math.random() * hexagonImages.length);

@@ -3596,66 +3596,45 @@ details-disclosure > details {
   }
 }
 
-/* Full-width scrolling container */
+/* SCROLL CONTAINER */
 .hexagon-scroll-container {
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
   padding: 10px 0;
 }
 
-/* Container holding all hexagon rows */
+/* HEXAGON GRID - FLEXIBLE SCROLLABLE CONTAINER */
 .hexagon-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  width: auto;
 }
 
-/* Each row container */
-.hexagon-row {
-  display: flex;
-}
-
-/* Offsetting alternate rows to form honeycomb effect */
-.hexagon-row.offset {
-  margin-left: 75px; /* Half of the hexagon width */
-}
-
-/* Hexagon shape */
+/* HEXAGON SHAPE */
 .hexagon {
-  width: 150px;
-  height: 86.6px; /* Exact height for a perfect hexagon: width * sqrt(3)/2 */
-  background-color: #ccc;
+  width: 120px; /* Adjust for best fit */
+  height: 104px; /* Must be width * sqrt(3)/2 */
+  background-color: #ddd;
   position: relative;
-  margin-bottom: -28px; /* Overlapping rows perfectly */
+  margin: 2px; /* Adjust spacing */
+  text-align: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  display: inline-block;
 }
 
-/* Clip hexagons to perfect shape */
-.hexagon::before,
-.hexagon::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-}
-
-.hexagon::before {
-  top: 0;
-  border-bottom: 43.3px solid #ccc; /* Half of the height */
-}
-
-.hexagon::after {
-  bottom: 0;
-  border-top: 43.3px solid #ccc; /* Half of the height */
-}
-
-/* Ensure images fit inside hexagons */
+/* ENSURING IMAGES FIT PROPERLY */
 .hexagon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* OFFSET EVERY SECOND ROW */
+.hexagon:nth-child(odd) {
+  margin-left: 60px; /* Half the width of a hexagon */
 }

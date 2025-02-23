@@ -3598,21 +3598,22 @@ details-disclosure > details {
 
 :root {
   --hex-width: 150px;
-  --hex-height: calc(var(--hex-width) * 0.866); /* ≈130px */
-  --vertical-spacing: calc(var(--hex-height) * 0.75); /* ≈97.5px */
-  --row-offset: calc(var(--hex-width) / 2); /* 75px */
+  --hex-height: 130px;           /* 150px * 0.866 ≈ 130px for an equilateral hexagon */
+  --vertical-spacing: 97.5px;      /* 0.75 * 130px */
+  --row-offset: calc(var(--hex-width) / 2);  /* 75px */
 }
 
-/* Container height to snugly hold 4 rows:
+/* Container set to exactly hold 4 rows:
    Total height = hex-height + 3 * vertical-spacing = 130 + 3*97.5 = 422.5px */
 .hexagon-scroll-container {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 422.5px;
+  /* Use the default background (do not set a background-color) */
 }
 
-/* The grid is set to 200% width for seamless infinite scroll */
+/* The grid spans 200% width for seamless infinite horizontal scroll */
 .hexagon-grid {
   position: absolute;
   top: 0;
@@ -3621,7 +3622,7 @@ details-disclosure > details {
   animation: scroll-left 60s linear infinite;
 }
 
-/* Define 4 rows; duplicate content is in the HTML */
+/* Each row: duplicate content for seamless scrolling, absolutely positioned */
 .hexagon-row {
   position: absolute;
   display: flex;
@@ -3631,30 +3632,34 @@ details-disclosure > details {
   padding: 0;
 }
 
-/* Position rows for a perfect honeycomb layout:
-   - Row 0: top = 0, no horizontal offset.
-   - Row 1: top = 97.5px, offset left = 75px.
-   - Row 2: top = 195px, no offset.
-   - Row 3: top = 292.5px, offset left = 75px.
+/* Positioning the 4 rows:
+   Row 0: top = 0, no offset.
+   Row 1: top = 97.5px, offset left by 75px.
+   Row 2: top = 195px, no offset.
+   Row 3: top = 292.5px, offset left by 75px.
 */
+.hexagon-row[data-row="0"],
 .hexagon-row.row-0 {
   top: 0;
   left: 0;
 }
+.hexagon-row[data-row="1"],
 .hexagon-row.row-1 {
   top: var(--vertical-spacing);
   left: var(--row-offset);
 }
+.hexagon-row[data-row="2"],
 .hexagon-row.row-2 {
   top: calc(2 * var(--vertical-spacing));
   left: 0;
 }
+.hexagon-row[data-row="3"],
 .hexagon-row.row-3 {
   top: calc(3 * var(--vertical-spacing));
   left: var(--row-offset);
 }
 
-/* Hexagon shape: a perfect equilateral hexagon */
+/* Hexagon shape: Perfect equilateral hexagon */
 .hexagon {
   width: var(--hex-width);
   height: var(--hex-height);
@@ -3666,7 +3671,7 @@ details-disclosure > details {
   background-color: transparent;
 }
 
-/* Ensure images fill the hexagon */
+/* Ensure images (or placeholders) fill the hexagon */
 .hexagon img,
 .hexagon .placeholder {
   width: 100%;

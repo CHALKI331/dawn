@@ -292,6 +292,10 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "hexagon_grid_jCrMFT": {
+      "type": "hexagon-grid",
+      "settings": {}
     }
   },
   "order": [
@@ -299,6 +303,7 @@
     "rich_text",
     "collection_list_wTKwdP",
     "featured_collection",
+    "hexagon_grid_jCrMFT",
     "video",
     "multicolumn",
     "collapsible_content_Wt7Qzi"

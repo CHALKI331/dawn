@@ -200,11 +200,11 @@
         "settings": {
           "background": "#656d4a",
           "background_gradient": "",
-          "text": "#252422",
-          "button": "#403d39",
-          "button_label": "#d0cdc7",
+          "text": "#fffcf2",
+          "button": "#d0cdc7",
+          "button_label": "#252422",
           "secondary_button_label": "#656d4a",
-          "shadow": "#121212"
+          "shadow": "#fffcf2"
         }
       }
     }

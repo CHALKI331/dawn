@@ -99,18 +99,18 @@
         "description_style": "body",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
+        "full_width": true,
+        "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-2",
         "image_ratio": "adapt",
-        "image_shape": "default",
+        "image_shape": "round",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 28,
         "padding_bottom": 36
       }
@@ -137,7 +137,7 @@
           "type": "column",
           "settings": {
             "title": "Realistic Mission Planning Models",
-            "text": "",
+            "text": "<p>Models that accurately depict vehicle <strong>types</strong>, <strong>positions</strong>, and <strong>directions</strong>, enable clear communication and understanding of intent during mission briefings and rehearsal of concept (ROC) drills.</p>",
             "link_label": "",
             "link": ""
           }
@@ -146,7 +146,7 @@
           "type": "column",
           "settings": {
             "title": "Affordable Customisation",
-            "text": "",
+            "text": "<p>Any model we don't stock can be created in a short time to fulfil your planning needs. For models that are not currently available, we offer a timely creation service to satisfy your planning needs.</p>",
             "link_label": "",
             "link": ""
           }
@@ -155,7 +155,7 @@
           "type": "column",
           "settings": {
             "title": "Portable and Durable Designs",
-            "text": "<p>Models that accurately depict vehicle <strong>types</strong>, <strong>positions</strong>, and <strong>directions</strong>, enable clear communication and understanding of intent during mission briefings and rehearsal of concept (ROC) drills.</p>",
+            "text": "<p>We supply environmentally conscious materials (PLA) that decompose sustainably and resilient materials (TPU) that resist extreme pressure and heat.</p>",
             "link_label": "",
             "link": ""
           }

@@ -3619,3 +3619,32 @@ details-disclosure > details {
   object-fit: cover;
   display: block;
 }
+
+.hexagon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -10px;
+}
+
+.hexagon {
+  width: 150px;
+  height: 130px; /* Adjust this value if needed */
+  margin: 10px;
+  overflow: hidden;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Ensure images cover the hexagon */
+.hexagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Create a tessellating effect by offsetting every other row.
+   Here, we use a transform on every odd hexagon.
+   (You might need to adjust this based on your exact layout.) */
+.hexagon:nth-child(odd) {
+  transform: translateY(65px);
+}

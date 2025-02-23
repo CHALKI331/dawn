@@ -1,10 +1,9 @@
 {% comment %}
-  Infinite Hexagon Honeycomb with Randomized Images and Auto-Scroll
-  - 4 rows of gapless, perfectly tessellated hexagons (150px x 130px).
-  - Each hexagon shows a random product image and links to its product page.
-  - Each row’s content is duplicated for seamless infinite horizontal scrolling.
-  - All hexagons randomize their images at load, and then update at random intervals between 5 and 8 seconds.
-  - The auto-scroll is implemented in JavaScript and is user-interactive.
+  Infinite Hexagon Honeycomb (4 rows)
+  - Displays 4 rows of gap-free, tessellated hexagons (150px x 130px).
+  - Each hexagon is a clickable link to its product page.
+  - Each row's content is duplicated for seamless infinite horizontal scrolling.
+  - All hexagons get a random product image on load and update every 5 seconds.
 {% endcomment %}
 
 {% assign products_array = collections.all.products %}
@@ -24,13 +23,12 @@
 <div class="hexagon-scroll-container">
   <div class="hexagon-grid">
     {% for row in (0..3) %}
-      <div class="hexagon-row row-{{ row }}" data-row="{{ row }}">
+      <div class="hexagon-row" data-row="{{ row }}">
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
           </a>
         {% endfor %}
-        {%- comment -%} Duplicate the row for seamless scrolling {% endcomment -%}
         {% for i in (1..hexagons_per_row) %}
           <a href="#" class="hexagon">
             <img src="" alt="Product Image">
@@ -42,16 +40,16 @@
 </div>
 
 <script>
-  // Parse product data from Liquid
+  // Parse product data from Liquid into an array.
   var productData = {{ product_data_json | strip_newlines }};
   
-  // Helper: Returns a random product object
+  // Helper: Return a random product object from productData.
   function getRandomProduct() {
     return productData[Math.floor(Math.random() * productData.length)];
   }
   
-  // Assign a random product to each hexagon on page load
-  document.addEventListener('DOMContentLoaded', function() {
+  // Update all hexagons with random product data.
+  function updateAllHexagons() {
     var hexagons = document.querySelectorAll('.hexagon');
     hexagons.forEach(function(hex) {
       var product = getRandomProduct();
@@ -60,57 +58,13 @@
       if (img) {
         img.src = product.image;
       }
-      // Also assign a random update interval between 5 and 8 seconds for each hexagon
-      hex.dataset.updateInterval = Math.floor(Math.random() * 3000) + 5000; // 5000-8000ms
-      // Start a self-scheduling update for this hexagon
-      scheduleHexUpdate(hex);
     });
-  });
-  
-  // Recursive function: updates a given hexagon and reschedules its update at a random interval.
-  function scheduleHexUpdate(hex) {
-    var interval = parseInt(hex.dataset.updateInterval, 10);
-    setTimeout(function() {
-      var product = getRandomProduct();
-      hex.href = product.url;
-      var img = hex.querySelector('img');
-      if (img) {
-        img.src = product.image;
-      }
-      // Assign a new random interval for next update
-      hex.dataset.updateInterval = Math.floor(Math.random() * 3000) + 5000;
-      scheduleHexUpdate(hex);
-    }, interval);
   }
   
-  // Auto-scroll implementation using requestAnimationFrame.
-  (function() {
-    var container = document.querySelector('.hexagon-scroll-container');
-    var scrollSpeed = 0.3; // pixels per millisecond, adjust as needed
-    var autoScroll = true;
-    var lastTime = null;
-    
-    function step(timestamp) {
-      if (!lastTime) lastTime = timestamp;
-      var delta = timestamp - lastTime;
-      if (autoScroll) {
-        container.scrollLeft += scrollSpeed * delta;
-        // Because content is duplicated, if scrollLeft exceeds half the scrollWidth, reset it.
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-          container.scrollLeft = container.scrollLeft - container.scrollWidth / 2;
-        }
-      }
-      lastTime = timestamp;
-      requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-    
-    // Listen for user interactions to pause auto-scroll temporarily.
-    container.addEventListener('mousedown', function() { autoScroll = false; });
-    container.addEventListener('touchstart', function() { autoScroll = false; });
-    container.addEventListener('mouseup', function() { autoScroll = true; });
-    container.addEventListener('touchend', function() { autoScroll = true; });
-  })();
+  document.addEventListener('DOMContentLoaded', function() {
+    updateAllHexagons(); // Set random images on page load.
+    setInterval(updateAllHexagons, 5000); // Update all hexagons every 5 seconds.
+  });
 </script>
 
 {% schema %}

@@ -3597,8 +3597,8 @@ details-disclosure > details {
 }
 
 :root {
-  --hex-width: 150px;
-  --hex-height: 130px;              /* 150 * 0.866 ≈ 130px for an equilateral hexagon */
+  --hex-width: 130px;
+  --hex-height: 150px;              /* 150 * 0.866 ≈ 130px for an equilateral hexagon */
   --vertical-spacing: 97.5px;         /* 0.75 * 130px */
   --row-offset: calc(var(--hex-width) / 2);  /* 75px */
 }

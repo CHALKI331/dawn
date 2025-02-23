@@ -44,8 +44,8 @@
         "text"
       ],
       "settings": {
-        "image": "shopify://shop_images/IMG_3791.jpg",
-        "image_overlay_opacity": 70,
+        "image": "shopify://shop_images/Screenshot_2025-02-23_at_22.44.04.png",
+        "image_overlay_opacity": 40,
         "image_height": "medium",
         "image_behavior": "zoom-in",
         "desktop_content_position": "middle-center",

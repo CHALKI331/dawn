@@ -3597,22 +3597,22 @@ details-disclosure > details {
 }
 
 :root {
-  --hex-width: 130px;
-  --hex-height: 150px;          /* For pointy-topped hexagons, height is larger than width */
-  --vertical-spacing: 112.5px;    /* Center-to-center vertical spacing for pointy-topped hexagons = 0.75 * height */
-  --row-offset: calc(var(--hex-width) / 2); /* 65px */
+  --hex-width: 150px;
+  --hex-height: 130px;             /* Perfect proportions: 150 x 130 */
+  --vertical-spacing: 97.5px;        /* 0.75 * 130 */
+  --row-offset: calc(var(--hex-width) / 2); /* 75px */
 }
 
-/* Container height: For 4 rows, total height = hex-height + 3 * vertical-spacing = 150 + 3*112.5 = 487.5px */
+/* Container set to exactly hold 4 rows:
+   Total height = hex-height + 3 * vertical-spacing = 130 + 3*97.5 = 422.5px */
 .hexagon-scroll-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 487.5px;
-  /* No hard-coded background color so default theme background is used */
+  height: 422.5px;
 }
 
-/* The grid spans 200% width for seamless infinite horizontal scroll */
+/* The grid spans 200% width for seamless infinite horizontal scrolling */
 .hexagon-grid {
   position: absolute;
   top: 0;
@@ -3621,7 +3621,7 @@ details-disclosure > details {
   animation: scroll-left 60s linear infinite;
 }
 
-/* Each row is absolutely positioned with duplicated content */
+/* Each row is absolutely positioned */
 .hexagon-row {
   position: absolute;
   display: flex;
@@ -3631,19 +3631,18 @@ details-disclosure > details {
   padding: 0;
 }
 
-/* Position rows for a perfect pointy-topped honeycomb:
-   For pointy-topped hexagons:
-   - Row 0: top = 0; left = 0.
-   - Row 1: top = vertical-spacing (112.5px); left = row-offset (65px).
-   - Row 2: top = 2 * vertical-spacing = 225px; left = 0.
-   - Row 3: top = 3 * vertical-spacing = 337.5px; left = row-offset (65px).
+/* Position rows to form a perfect honeycomb:
+   - Row 0: top: 0; left: 0.
+   - Row 1: top: var(--vertical-spacing); left: var(--row-offset).
+   - Row 2: top: calc(2 * var(--vertical-spacing)); left: 0.
+   - Row 3: top: calc(3 * var(--vertical-spacing)); left: var(--row-offset).
 */
 .hexagon-row[data-row="0"] { top: 0; left: 0; }
 .hexagon-row[data-row="1"] { top: var(--vertical-spacing); left: var(--row-offset); }
 .hexagon-row[data-row="2"] { top: calc(2 * var(--vertical-spacing)); left: 0; }
 .hexagon-row[data-row="3"] { top: calc(3 * var(--vertical-spacing)); left: var(--row-offset); }
 
-/* Hexagon shape: For pointy-topped hexagons, use a clip-path that produces a pointy top */
+/* Hexagon shape: a perfect equilateral hexagon */
 .hexagon {
   width: var(--hex-width);
   height: var(--hex-height);
@@ -3651,13 +3650,13 @@ details-disclosure > details {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* Pointy-topped hexagon: use polygon with points at 25% and 75% on top */
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background-color: transparent;
-  transition: opacity 1s ease-in-out;
+  /* Add a transition for opacity (the fade effect) */
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* Ensure images fill the hexagon */
+/* Ensure images fill each hexagon completely */
 .hexagon img,
 .hexagon .placeholder {
   width: 100%;

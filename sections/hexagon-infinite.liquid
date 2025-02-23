@@ -2,7 +2,7 @@
   Infinite Honeycomb Grid Section
   - Displays 4 rows of hexagons in a perfect tessellated honeycomb.
   - Each hexagon shows a product’s featured image (or a placeholder) and links to its product page.
-  - Each row’s content is duplicated for seamless infinite scrolling.
+  - Each row’s content is duplicated for seamless infinite horizontal scrolling.
 {% endcomment %}
 
 <div class="hexagon-scroll-container">
@@ -11,7 +11,7 @@
     {% assign products = collections.all.products %}
     {% for row in (0..rows-1) %}
       <div class="hexagon-row" data-row="{{ row }}">
-        {%- for product in products -%}
+        {% for product in products %}
           <a href="{{ product.url }}" class="hexagon">
             {% if product.featured_image %}
               <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}">
@@ -19,9 +19,9 @@
               <div class="placeholder">No Image</div>
             {% endif %}
           </a>
-        {%- endfor -%}
+        {% endfor %}
         {%- comment -%}
-          Duplicate the row for infinite scrolling
+          Duplicate the row for seamless scrolling.
         {%- endcomment -%}
         {% for product in products %}
           <a href="{{ product.url }}" class="hexagon">
@@ -39,11 +39,11 @@
 
 {% schema %}
 {
-  "name": "InfiniteHexagons",
+  "name": "InfiniteHex",
   "settings": [],
   "presets": [
     {
-      "name": "InfiniteHexagons",
+      "name": "InfiniteHex",
       "category": "Custom"
     }
   ]

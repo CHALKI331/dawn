@@ -248,14 +248,14 @@
         "padding_bottom": 36
       }
     },
-    "hexagon_infinite_aEaTc6": {
+    "hexagon_infinite_9ybjGr": {
       "type": "hexagon-infinite",
       "settings": {}
     }
   },
   "order": [
     "image_banner",
-    "hexagon_infinite_aEaTc6",
+    "hexagon_infinite_9ybjGr",
     "rich_text",
     "collection_list_wTKwdP",
     "multicolumn",

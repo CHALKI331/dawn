@@ -217,10 +217,10 @@
         "columns_mobile": "2",
         "color_scheme": "scheme-2",
         "image_ratio": "square",
-        "image_shape": "default",
+        "image_shape": "round",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "padding_top": 36,
         "padding_bottom": 28
       }

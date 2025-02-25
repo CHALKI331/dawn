@@ -227,6 +227,7 @@
     },
     "1740310033dcd137d5": {
       "type": "apps",
+      "disabled": true,
       "settings": {
         "include_margins": true
       }

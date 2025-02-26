@@ -68,9 +68,9 @@
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "Shipping",
             "icon": "truck",
-            "content": "<p>Free Shipping for orders over $250 calculated at the checkout.</p><p>All items are shipped from Townsville, QLD.</p><p>Shipping World Wide!</p>",
+            "content": "<p>Free Shipping for orders over $250 calculated at the checkout.</p><p>All items are shipped from Townsville, QLD.</p><p>Shipping World Wide - coming soon</p>",
             "page": ""
           }
         },

@@ -159,6 +159,11 @@
           "button_vertical_position": "lowest",
           "greeting_message": ""
         }
+      },
+      "11656770355074664061": {
+        "type": "shopify://apps/google-analytics-pasilobus/blocks/ga4/a193266a-8f65-4da8-bcba-d9df8d371e21",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {

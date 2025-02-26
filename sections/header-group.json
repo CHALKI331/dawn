@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "text": "Click here to sign up for further product release and seasonal deals.",
-            "link": ""
+            "link": "shopify://pages/newsletter"
           }
         }
       },

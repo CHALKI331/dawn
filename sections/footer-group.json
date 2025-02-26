@@ -13,13 +13,25 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "text_7cFWfT": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact Information",
+            "subtext": "<p>Email: Support@spack.au<br/>Address: 5/30 Civil Road, Garbutt QLD 4814</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_7cFWfT"
+      ],
       "settings": {
         "color_scheme": "scheme-7374417a-537e-4e5f-86a1-0139a6cfafc9",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
         "show_social": true,
-        "enable_country_selector": false,
+        "enable_country_selector": true,
         "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": true,

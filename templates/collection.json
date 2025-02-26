@@ -11,10 +11,58 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": true,
         "color_scheme": "scheme-2"
+      }
+    },
+    "collection_list_mjjX6x": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_htEyHE": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-camouflage-models"
+          }
+        },
+        "featured_collection_CWgDLh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-mud-models"
+          }
+        },
+        "featured_collection_4CpQRV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-accessories"
+          }
+        },
+        "featured_collection_LkCn8r": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spack-au-professionally-built"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_htEyHE",
+        "featured_collection_CWgDLh",
+        "featured_collection_4CpQRV",
+        "featured_collection_LkCn8r"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product-grid": {
@@ -40,6 +88,7 @@
   },
   "order": [
     "banner",
+    "collection_list_mjjX6x",
     "product-grid"
   ]
 }

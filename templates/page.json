@@ -17,30 +17,33 @@
         "padding_bottom": 28
       }
     },
-    "rich_text_mTLwh3": {
-      "type": "rich-text",
+    "newsletter_Fnx4GV": {
+      "type": "newsletter",
       "blocks": {
-        "heading_R6CXPW": {
+        "heading_JatazF": {
           "type": "heading",
           "settings": {
-            "heading": "About Us",
-            "heading_size": "hxxl"
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
           }
         },
-        "text_NpxGeH": {
-          "type": "text",
+        "paragraph_kbpqwN": {
+          "type": "paragraph",
           "settings": {
-            "text": "<p>G'day, I'm Michael, the guy behind Spack.au, your go-to destination for all things 3D printed for Australian Defence Force and Defence Industry gear in Australia.</p><p>At Spack.au, I'm all about making 3D printing accessible to anyone. I reckon everyone should have the chance to get their hands on some gear.</p><p>When you use our services at Spack.au, you're not just supporting a business; you're becoming part of my journey.</p><p>Let's celebrate the beauty of Aussie craftsmanship and dive headfirst into a world where you can find treasures that'll have you saying, \"Strewth, where'd you get that?\"</p><p>I'm stoked to have you as part of my journey. Together, we'll make Spack.au the go-to place for all your 3D printing needs. So, grab a brew, sit back, and let Spack.au take you where you need to go!</p><h2>What we do.</h2><p>At Spack 3D Printing, we leverage advanced tools and equipment to bring your ideas to life through detailed 3D modelling and printing. Our process allows for customisation within the constraints of colour options and machine size, ensuring that your unique specifications can be met. We welcome all requests and are ready to provide estimates tailored to your project's specific needs. Whether you're looking for mud model kits or display models, our expertise ensures high-quality results that align with your vision.</p><h2>Tools of the trade.</h2><p>At Spack.au we use 3D modelling resources from AutoDesk Fusion and Plasticity to create all our models. We use the latest industry standard Prusa 3D printers to enable geometrical accuracy and superb surface finish. eSun PLA and Aurarum TPU is the filament of choice due to its colour similarities to the ADF camouflage.</p>"
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
           }
+        },
+        "email_form_bCcnrm": {
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
-        "heading_R6CXPW",
-        "text_NpxGeH"
+        "heading_JatazF",
+        "paragraph_kbpqwN",
+        "email_form_bCcnrm"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -50,6 +53,6 @@
   },
   "order": [
     "main",
-    "rich_text_mTLwh3"
+    "newsletter_Fnx4GV"
   ]
 }

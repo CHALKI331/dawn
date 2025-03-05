@@ -106,6 +106,12 @@
             "collection": "spack-au-mud-models"
           }
         },
+        "featured_collection_ikC4R8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "polymaker™"
+          }
+        },
         "featured_collection_ne4CRU": {
           "type": "featured_collection",
           "settings": {
@@ -122,6 +128,7 @@
       "block_order": [
         "featured_collection_89hphC",
         "featured_collection_WbgXAe",
+        "featured_collection_ikC4R8",
         "featured_collection_ne4CRU",
         "featured_collection_6k8jfw"
       ],

@@ -33,6 +33,12 @@
             "collection": "spack-au-mud-models"
           }
         },
+        "featured_collection_fxCkRi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "polymaker™"
+          }
+        },
         "featured_collection_4CpQRV": {
           "type": "featured_collection",
           "settings": {
@@ -44,20 +50,14 @@
           "settings": {
             "collection": "spack-au-professionally-built"
           }
-        },
-        "featured_collection_fxCkRi": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "polymaker™"
-          }
         }
       },
       "block_order": [
         "featured_collection_htEyHE",
         "featured_collection_CWgDLh",
+        "featured_collection_fxCkRi",
         "featured_collection_4CpQRV",
-        "featured_collection_LkCn8r",
-        "featured_collection_fxCkRi"
+        "featured_collection_LkCn8r"
       ],
       "settings": {
         "title": "Collections",

@@ -35,6 +35,7 @@
         },
         "featured_collection_fxCkRi": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "polymaker™"
           }

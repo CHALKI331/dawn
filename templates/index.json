@@ -325,8 +325,8 @@
         "event_bR9RVU": {
           "type": "event",
           "settings": {
-            "year": "Far off requests",
-            "description": "<ul><li>AN/TPS-77 - 114MCRU</li></ul>"
+            "year": "Requests",
+            "description": "<ul><li>AN/TPS-77 - 114MCRU</li><li>LR110</li><li>UNIMOG</li></ul>"
           }
         }
       },

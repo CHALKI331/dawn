@@ -17,6 +17,7 @@
       color: var(--color-accent, #0073e6);
       text-decoration: underline;
   }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -111,6 +112,7 @@
     justify-content: center;
     font-weight: bold;
     color: #fff;
+    white-space: nowrap;
   }
 {%- endstyle -%}
 
@@ -130,9 +132,9 @@
     {%- endunless -%}
     <ul class="card_content">
       {% for block in section.blocks %}
-        <li data-year="{{ block.settings.year }}">
+        <li data-year="{{ block.settings.year | strip_html }}">
           <div class="card_data">
-            {{ block.settings.description }}
+            {{ block.settings.description | strip_html }}
           </div>
         </li>
       {% endfor %}

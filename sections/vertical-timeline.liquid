@@ -150,11 +150,14 @@
     }
 
     .vertical_timeline .card_content li::after {
-      left: 10%; /* Align with the left edge of the card */
-      transform: translateX(0); /* Remove centering transform for mobile */
+      left: 5% !important; /* Align with the left edge of the card, overriding desktop styles */
+      transform: translateX(0) !important; /* Remove centering transform, overriding desktop styles */
       top: -40px;
       font-size: 12px;
       padding: 6px 10px;
+      /* Temporarily remove clip-path to debug positioning */
+      /* clip-path: none; */
+      /* background-color: red; /* Use a solid color to verify positioning */
     }
   }
 {%- endstyle -%}
@@ -222,7 +225,7 @@
     {
       "type": "color",
       "id": "dot_color",
-      "label": "Timeline Dot Colour",
+      "label": "dot_color",
       "default": "#000"
     },
     {

@@ -304,21 +304,21 @@
         "event_xzKtzE": {
           "type": "event",
           "settings": {
-            "year": "March 2025",
-            "description": "Upgrading the AH-64 Delta variant to the new ADF AH-64 Echo with Kangaroo"
+            "year": "<p><strong>March 2025</strong></p>",
+            "description": "<p>Upgrading the AH-64 Delta variant to the new ADF AH-64 Echo with Kangaroo</p>"
           }
         },
         "event_JmfUaN": {
           "type": "event",
           "settings": {
-            "year": "April 2025",
+            "year": "<p>April 2025</p>",
             "description": ""
           }
         },
         "event_cNGYDb": {
           "type": "event",
           "settings": {
-            "year": "May 2025",
+            "year": "<p>May 2025</p>",
             "description": ""
           }
         }

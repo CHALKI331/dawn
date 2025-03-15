@@ -134,7 +134,7 @@
       {% for block in section.blocks %}
         <li data-year="{{ block.settings.year | strip_html }}">
           <div class="card_data">
-            {{ block.settings.description | strip_html }}
+            {{ block.settings.description }}
           </div>
         </li>
       {% endfor %}
@@ -215,10 +215,10 @@
           "default": "Year XXXX"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "description",
           "label": "Event Description",
-          "default": "Description of a significant event or milestone."
+          "default": "<p>Description of a significant event or milestone.</p>"
         }
       ]
     }

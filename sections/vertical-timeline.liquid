@@ -101,10 +101,10 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 40px;
-    height: 40px;
+    width: auto;
+    padding: 8px 12px;
     background-color: {{ section.settings.dot_color }};
-    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transform: translate(-50%, -50%);
     z-index: 2;
     display: flex;

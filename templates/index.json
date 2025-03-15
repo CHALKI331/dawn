@@ -305,28 +305,28 @@
           "type": "event",
           "settings": {
             "year": "Working on it now",
-            "description": "<ul><li>Upgrading the AH-64 Delta variant to the new ADF AH-64 Echo with Kangaroo</li></ul>"
+            "description": "<p>Upgrading the AH-64 Delta variant to the new ADF AH-64 Echo with Kangaroo</p>"
           }
         },
         "event_JmfUaN": {
           "type": "event",
           "settings": {
             "year": "After That",
-            "description": "<ul><li>MQ-28 Ghost Bat</li><li>AusCam Paint job - M1074 and M1150</li></ul>"
+            "description": "<p>MQ-28 Ghost Bat</p><p>AusCam Paint job - M1074 and M1150</p>"
           }
         },
         "event_cNGYDb": {
           "type": "event",
           "settings": {
             "year": "Later",
-            "description": "<ul><li>40M Protected</li><li>45M Un/Protected</li><li>42M Un/Protected</li><li>Armidale Class Patrol Boat</li><li>LCM-8</li><li>LARC-V</li><li>HX81 w/ HET</li><li>RAAF FireTruck - Panther & Striker</li><li>M113 - Fitter/Recovery</li><li>Leopard AS1</li><li>C17 Globemaster</li><li>F35A</li><li>RQ-7B Shadow</li><li>NASAMs</li></ul>"
+            "description": "<p>40M Protected</p><p>45M Un/Protected</p><p>42M Un/Protected</p><p>Armidale Class Patrol Boat</p><p>LCM-8</p><p>LARC-V</p><p>HX81 w/ HET</p><p>RAAF FireTruck - Panther & Striker</p><p>M113 - Fitter/Recovery</p><p>Leopard AS1</p><p>C17 Globemaster</p><p>F35A</p><p>RQ-7B Shadow</p><p>NASAMs</p>"
           }
         },
         "event_bR9RVU": {
           "type": "event",
           "settings": {
             "year": "Requests",
-            "description": "<ul><li>AN/TPS-77 - 114MCRU</li><li>LR110</li><li>UNIMOG</li></ul>"
+            "description": "<p>AN/TPS-77 - 114MCRU</p><p>LR110</p><p>UNIMOG</p>"
           }
         }
       },

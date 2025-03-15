@@ -9,22 +9,15 @@
       "default": "Our Journey"
     },
     {
-      "type": "color",
-      "id": "timeline_line_color",
-      "label": "Timeline Line Colour",
-      "default": "#223617"
-    },
-    {
-      "type": "color",
-      "id": "card_background_color",
-      "label": "Card Background Colour",
-      "default": "#223617"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Colour",
-      "default": "#eff6ea"
+      "type": "select",
+      "id": "theme_color",
+      "label": "Select Theme Colour",
+      "options": [
+        { "value": "primary", "label": "Primary Theme Colour" },
+        { "value": "secondary", "label": "Secondary Theme Colour" },
+        { "value": "accent", "label": "Accent Theme Colour" }
+      ],
+      "default": "primary"
     }
   ],
   "blocks": [
@@ -100,7 +93,7 @@
     width: 6px;
     margin: 0 auto;
     padding-top: 50px;
-    background-color: {{ section.settings.timeline_line_color }};
+    background-color: var(--color-{{ section.settings.theme_color }});
   }
 
   .timeline .card_content li::after {
@@ -112,7 +105,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: {{ section.settings.timeline_line_color }};
+    background: var(--color-{{ section.settings.theme_color }});
     z-index: 1;
   }
 
@@ -120,8 +113,8 @@
     position: relative;
     width: 400px;
     padding: 15px;
-    background-color: {{ section.settings.card_background_color }};
-    color: {{ section.settings.text_color }};
+    background-color: var(--color-{{ section.settings.theme_color }});
+    color: #eff6ea;
     visibility: hidden;
     opacity: 0;
     transform: translateY(50px);

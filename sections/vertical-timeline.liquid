@@ -13,6 +13,73 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .vertical_timeline {
+    position: relative;
+  }
+
+  .vertical_timeline .card_content {
+    position: relative;
+    list-style: none;
+    padding: 0;
+  }
+
+  .vertical_timeline .card_content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: var(--color-foreground, #000);
+    transform: translateX(-50%);
+  }
+
+  .vertical_timeline .card_content li {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .vertical_timeline .card_content li .card_data {
+    position: relative;
+    width: 45%;
+    background-color: var(--color-background, #fff);
+    border: 2px solid var(--color-border, #000);
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .vertical_timeline .card_content li:nth-child(odd) .card_data {
+    left: 0;
+    transform: translateX(-50px);
+  }
+
+  .vertical_timeline .card_content li:nth-child(even) .card_data {
+    left: 55%;
+    transform: translateX(50px);
+  }
+
+  .vertical_timeline .card_content li.in-view .card_data {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .vertical_timeline .card_content li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-accent, #000);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
 {%- endstyle -%}
 
 <div class="vertical_timeline color-{{ section.settings.color_scheme }} gradient">
@@ -40,6 +107,24 @@
     </ul>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const timelineItems = document.querySelectorAll(".vertical_timeline .card_content li");
+
+    function checkScroll() {
+      timelineItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          item.classList.add("in-view");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    window.addEventListener("load", checkScroll);
+  });
+</script>
 
 {% schema %}
 {

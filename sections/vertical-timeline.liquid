@@ -39,7 +39,7 @@
     position: relative;
     list-style: none;
     padding: 0;
-    margin-top: 80px; /* Added to create space between title and first card */
+    margin-top: 80px; /* Space between title and first card */
   }
 
   .vertical_timeline .card_content::before {
@@ -119,7 +119,11 @@
 
   @media screen and (max-width: 600px) {
     .vertical_timeline .card_content {
-      margin-top: 50px; /* Reduced margin for mobile to avoid excessive spacing */
+      margin-top: 50px; /* Reduced margin for mobile */
+    }
+
+    .vertical_timeline .card_content::before {
+      display: none; /* Hides the line in mobile view to prevent overlap */
     }
 
     .vertical_timeline .card_content li .card_data {

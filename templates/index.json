@@ -311,8 +311,8 @@
         "event_JmfUaN": {
           "type": "event",
           "settings": {
-            "year": "<p>April 2025</p>",
-            "description": ""
+            "year": "April 2025",
+            "description": "<ul><li>MQ-28 Ghost Bat</li></ul>"
           }
         },
         "event_cNGYDb": {

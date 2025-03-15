@@ -330,7 +330,8 @@
       ],
       "settings": {
         "title": "Upcoming Model Releases",
-        "color_scheme": "scheme-2",
+        "line_color": "#656d4a",
+        "dot_color": "#252422",
         "padding_top": 36,
         "padding_bottom": 36
       }

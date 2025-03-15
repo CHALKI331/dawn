@@ -150,6 +150,8 @@
     }
 
     .vertical_timeline .card_content li::after {
+      left: 10%; /* Align with the left edge of the card (5% + half the card width adjustment) */
+      transform: translateX(0); /* Remove centering transform for mobile */
       top: -40px;
       font-size: 12px;
       padding: 6px 10px;

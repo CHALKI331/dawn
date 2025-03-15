@@ -2,6 +2,21 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+
+  .vertical_timeline .card_content .card_data p {
+      margin: 0;
+      line-height: 1.5;
+  }
+
+  .vertical_timeline .card_content .card_data strong,
+  .vertical_timeline .card_content .card_data b {
+      font-weight: bold;
+  }
+
+  .vertical_timeline .card_content .card_data a {
+      color: var(--color-accent, #0073e6);
+      text-decoration: underline;
+  }
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;

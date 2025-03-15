@@ -297,6 +297,40 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "vertical_timeline_QC6Fnx": {
+      "type": "vertical-timeline",
+      "blocks": {
+        "event_xzKtzE": {
+          "type": "event",
+          "settings": {
+            "year": "March 2025",
+            "description": "Upgrading the AH-64 Delta variant to the new ADF AH-64 Echo with Kangaroo"
+          }
+        },
+        "event_JmfUaN": {
+          "type": "event",
+          "settings": {
+            "year": "April 2025",
+            "description": ""
+          }
+        },
+        "event_cNGYDb": {
+          "type": "event",
+          "settings": {
+            "year": "Year XXXX",
+            "description": "Description of a significant event or milestone."
+          }
+        }
+      },
+      "block_order": [
+        "event_xzKtzE",
+        "event_JmfUaN",
+        "event_cNGYDb"
+      ],
+      "settings": {
+        "heading": "Upcoming model releases"
+      }
     }
   },
   "order": [
@@ -307,6 +341,7 @@
     "multicolumn",
     "17403118402bdfe145",
     "1740572253b92c42c8",
-    "collapsible_content_Wt7Qzi"
+    "collapsible_content_Wt7Qzi",
+    "vertical_timeline_QC6Fnx"
   ]
 }

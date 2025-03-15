@@ -31,8 +31,19 @@
     bottom: 0;
     left: 50%;
     width: 4px;
-    background-color: var(--color-foreground, #000);
+    background: linear-gradient(transparent, {{ section.settings.line_color }}, transparent);
     transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInLine 1.5s forwards;
+  }
+
+  @keyframes fadeInLine {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .vertical_timeline .card_content li {
@@ -75,7 +86,7 @@
     top: 50%;
     width: 20px;
     height: 20px;
-    background-color: var(--color-accent, #000);
+    background-color: {{ section.settings.dot_color }};
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -137,10 +148,16 @@
       "default": "Our Journey"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color Scheme",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "line_color",
+      "label": "Timeline Line Colour",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Timeline Dot Colour",
+      "default": "#000"
     },
     {
       "type": "range",

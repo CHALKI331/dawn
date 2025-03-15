@@ -1,12 +1,81 @@
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vertical_timeline color-{{ section.settings.color_scheme }} gradient">
+  <div
+    class="page-width section-{{ section.id }}-padding isolate"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%}
+    <ul class="card_content">
+      {% for block in section.blocks %}
+        <li>
+          <div class="card_data">
+            {{ block.settings.year }}: {{ block.settings.description }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "Vertical Timeline",
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
+      "type": "inline_richtext",
+      "id": "title",
       "label": "Timeline Heading",
       "default": "Our Journey"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
     }
   ],
   "blocks": [
@@ -42,122 +111,3 @@
   ]
 }
 {% endschema %}
-
-<div class="vertical_timeline">
-  <section class="timeline">
-    <h1>{{ section.settings.heading }}</h1>
-    <ul class="card_content">
-      {% for block in section.blocks %}
-        <li>
-          <div class="card_data">
-            {{ block.settings.year }}: {{ block.settings.description }}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-</div>
-
-<style>
-  .timeline h1 {
-    background-color: #ffffff;
-    font-size: 30px;
-    font-weight: 600;
-    text-align: center;
-    color: #000000;
-    padding: 50px 0;
-    margin: 0;
-  }
-
-  .card_content {
-    background-color: #eff6ea;
-    padding: 50px 0 100px 0;
-    margin: 0;
-    padding-left: 0;
-  }
-
-  .timeline .card_content li {
-    list-style-type: none;
-    position: relative;
-    width: 6px;
-    margin: 0 auto;
-    padding-top: 50px;
-    background-color: var(--color-button-primary-background);
-  }
-
-  .timeline .card_content li::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--color-button-primary-background);
-    z-index: 1;
-  }
-
-  .timeline .card_content li .card_data {
-    position: relative;
-    width: 400px;
-    padding: 15px;
-    background-color: var(--color-button-primary-background);
-    color: var(--color-button-primary-text);
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.5s ease-in-out;
-  }
-
-  .timeline .card_content li.in-view .card_data {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
-  }
-
-  @media screen and (max-width: 900px) {
-    .timeline .card_content li .card_data {
-      width: 250px;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .timeline .card_content li {
-      margin-left: 20px;
-    }
-    .timeline .card_content li .card_data {
-      width: 100%;
-      left: 0 !important;
-      text-align: left;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll(".timeline li");
-
-    function isElementInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-
-    function callbackFunc() {
-      items.forEach((item) => {
-        if (isElementInViewport(item)) {
-          item.classList.add("in-view");
-        }
-      });
-    }
-
-    window.addEventListener("load", callbackFunc);
-    window.addEventListener("resize", callbackFunc);
-    window.addEventListener("scroll", callbackFunc);
-  });
-</script>

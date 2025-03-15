@@ -321,12 +321,20 @@
             "year": "Later",
             "description": "<ul><li>40M Protected</li><li>45M Un/Protected</li><li>42M Un/Protected</li><li>Armidale Class Patrol Boat</li><li>LCM-8</li><li>M113 - Fitter/Recovery</li></ul>"
           }
+        },
+        "event_bR9RVU": {
+          "type": "event",
+          "settings": {
+            "year": "Far off requests",
+            "description": "<ul><li>AN/TPS-77 - 114MCRU</li></ul>"
+          }
         }
       },
       "block_order": [
         "event_xzKtzE",
         "event_JmfUaN",
-        "event_cNGYDb"
+        "event_cNGYDb",
+        "event_bR9RVU"
       ],
       "settings": {
         "title": "Upcoming Model Releases",

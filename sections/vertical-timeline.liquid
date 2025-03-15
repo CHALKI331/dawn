@@ -11,10 +11,12 @@
   .vertical_timeline .card_content .card_data ul {
       padding-left: 20px; /* Add padding to the left of bullet points for better alignment */
       margin: 0 0 10px 0; /* Ensure consistent spacing */
+      list-style-type: disc; /* Explicitly set bullet style to avoid interference */
   }
 
   .vertical_timeline .card_content .card_data li {
       margin-bottom: 5px; /* Space between bullet points */
+      list-style-position: inside; /* Keep bullets inside the content flow */
   }
 
   .vertical_timeline .card_content .card_data strong,
@@ -150,14 +152,14 @@
     }
 
     .vertical_timeline .card_content li::after {
-      left: 5% !important; /* Align with the left edge of the card, overriding desktop styles */
-      transform: translateX(0) !important; /* Remove centering transform, overriding desktop styles */
+      left: 5% !important; /* Align with the left edge of the card */
+      transform: translateX(0) !important; /* Remove centering transform */
       top: -40px;
       font-size: 12px;
       padding: 6px 10px;
-      /* Temporarily remove clip-path to debug positioning */
-      /* clip-path: none; */
-      /* background-color: red; /* Use a solid color to verify positioning */
+      /* Debugging: Uncomment to test positioning */
+      /* clip-path: none !important; */
+      /* background-color: red !important; */
     }
   }
 {%- endstyle -%}
@@ -225,7 +227,7 @@
     {
       "type": "color",
       "id": "dot_color",
-      "label": "dot_color",
+      "label": "Timeline Dot Colour",
       "default": "#000"
     },
     {

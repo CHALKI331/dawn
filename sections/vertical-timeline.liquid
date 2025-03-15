@@ -101,7 +101,7 @@
     content: attr(data-year);
     position: absolute;
     left: 50%;
-    top: -30px;  /* Moves hexagon above text in mobile */
+    top: -60px;
     width: auto;
     padding: 8px 12px;
     background-color: {{ section.settings.dot_color }};
@@ -123,11 +123,11 @@
     }
 
     .vertical_timeline .card_content li:nth-child(even) .card_data {
-      left: 5%;  /* Ensure even items align correctly in mobile */
+      left: 5%;
     }
 
     .vertical_timeline .card_content li::after {
-      top: -40px;  /* Ensures hexagon stays above text */
+      top: -40px;
       font-size: 12px;
       padding: 6px 10px;
     }
@@ -205,20 +205,20 @@
       "id": "padding_top",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "Padding Top",
-      "default": 36
+      "default": 50
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
       "max": 100,
-      "step": 4,
+      "step": 1,
       "unit": "px",
       "label": "Padding Bottom",
-      "default": 36
+      "default": 50
     }
   ],
   "blocks": [
@@ -238,17 +238,6 @@
           "label": "Event Description",
           "default": "<p>Description of a significant event or milestone.</p>"
         }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Vertical Timeline",
-      "category": "Text",
-      "blocks": [
-        { "type": "event" },
-        { "type": "event" },
-        { "type": "event" }
       ]
     }
   ]

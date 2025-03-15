@@ -318,8 +318,8 @@
         "event_cNGYDb": {
           "type": "event",
           "settings": {
-            "year": "<p>May 2025</p>",
-            "description": ""
+            "year": "May 2025",
+            "description": "<ul><li>LCM-8</li></ul>"
           }
         }
       },

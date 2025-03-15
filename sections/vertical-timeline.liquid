@@ -11,12 +11,21 @@
   .vertical_timeline .card_content .card_data ul {
       padding-left: 20px; /* Add padding to the left of bullet points for better alignment */
       margin: 0 0 10px 0; /* Ensure consistent spacing */
-      list-style-type: disc; /* Explicitly set bullet style to avoid interference */
+      list-style-type: none; /* Remove default bullets to prevent hexagonal rendering */
   }
 
   .vertical_timeline .card_content .card_data li {
       margin-bottom: 5px; /* Space between bullet points */
-      list-style-position: inside; /* Keep bullets inside the content flow */
+      position: relative; /* Ensure proper positioning context */
+      padding-left: 10px; /* Add custom indentation instead of bullets */
+  }
+
+  .vertical_timeline .card_content .card_data li::before {
+      content: "•"; /* Custom bullet character */
+      position: absolute;
+      left: 0;
+      color: #000; /* Match text color */
+      font-size: 1em;
   }
 
   .vertical_timeline .card_content .card_data strong,

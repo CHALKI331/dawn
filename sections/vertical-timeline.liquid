@@ -7,17 +7,6 @@
       "id": "heading",
       "label": "Timeline Heading",
       "default": "Our Journey"
-    },
-    {
-      "type": "select",
-      "id": "theme_color",
-      "label": "Select Theme Colour",
-      "options": [
-        { "value": "primary", "label": "Primary Theme Colour" },
-        { "value": "secondary", "label": "Secondary Theme Colour" },
-        { "value": "accent", "label": "Accent Theme Colour" }
-      ],
-      "default": "primary"
     }
   ],
   "blocks": [
@@ -93,7 +82,7 @@
     width: 6px;
     margin: 0 auto;
     padding-top: 50px;
-    background-color: var(--color-{{ section.settings.theme_color }});
+    background-color: var(--color-button-primary-background);
   }
 
   .timeline .card_content li::after {
@@ -105,7 +94,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: var(--color-{{ section.settings.theme_color }});
+    background: var(--color-button-primary-background);
     z-index: 1;
   }
 
@@ -113,8 +102,8 @@
     position: relative;
     width: 400px;
     padding: 15px;
-    background-color: var(--color-{{ section.settings.theme_color }});
-    color: #eff6ea;
+    background-color: var(--color-button-primary-background);
+    color: var(--color-button-primary-text);
     visibility: hidden;
     opacity: 0;
     transform: translateY(50px);

@@ -193,16 +193,6 @@
           "ptpl_sideform": "ptpl_sideform_look"
         }
       },
-      "5004459476573512578": {
-        "type": "shopify://apps/conversios-google-analytics-4/blocks/app-embed/a5ed6aee-249e-497f-93bc-8eb285acecca",
-        "disabled": false,
-        "settings": {}
-      },
-      "3141728750423887031": {
-        "type": "shopify://apps/conversios-google-analytics-4/blocks/app-embed-body/a5ed6aee-249e-497f-93bc-8eb285acecca",
-        "disabled": false,
-        "settings": {}
-      },
       "7313114205116804392": {
         "type": "shopify://apps/propel-replays-surveys/blocks/app-embed/64fbaaa3-2d4a-49f3-aba7-86e92e44999f",
         "disabled": false,

@@ -123,6 +123,12 @@
           "settings": {
             "collection": "spack-au-professionally-built"
           }
+        },
+        "featured_collection_YJQxnd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "topotiles"
+          }
         }
       },
       "block_order": [
@@ -130,7 +136,8 @@
         "featured_collection_WbgXAe",
         "featured_collection_ikC4R8",
         "featured_collection_ne4CRU",
-        "featured_collection_6k8jfw"
+        "featured_collection_6k8jfw",
+        "featured_collection_YJQxnd"
       ],
       "settings": {
         "title": "Collections",

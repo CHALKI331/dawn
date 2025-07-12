@@ -750,33 +750,35 @@
       "returnMethod": "https://schema.org/ReturnByMail",
       "returnFees": "https://schema.org/FreeReturn"
     },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0.00",
-        "currency": "{{ shop.currency }}"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "AU"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 1,
-          "maxValue": 2,
-          "unitCode": "DAY"
+    "shippingDetails": [
+      {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": {% if product.selected_or_first_available_variant.price >= 30000 %} "0.00" {% else %} "15.00" {% endif %},
+          "currency": "{{ shop.currency }}"
         },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 3,
-          "maxValue": 7,
-          "unitCode": "DAY"
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "AU"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 3,
+            "maxValue": 7,
+            "unitCode": "DAY"
+          }
         }
       }
-    }
+    ]
   }
 }
 </script>

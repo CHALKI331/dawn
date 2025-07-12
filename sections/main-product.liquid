@@ -727,11 +727,12 @@
   "image": [
     {{ product.featured_image | img_url: 'master' | prepend: 'https:' | json }}
   ],
-  "description": {{ product.description | strip_html | json }},
-  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  "description": {{ product.description | strip_html | default: "No description available for this product." | truncate: 5000 | json }},
+  "sku": {{ product.selected_or_first_available_variant.sku | default: "N/A" | json }},
+  "gtin": {{ product.selected_or_first_available_variant.barcode | default: "" | json }},
   "brand": {
     "@type": "Brand",
-    "name": {{ product.vendor | json }}
+    "name": {{ product.vendor | default: "Unknown Brand" | json }}
   },
   "offers": {
     "@type": "Offer",
@@ -739,6 +740,8 @@
     "price": {{ product.selected_or_first_available_variant.price | money_without_currency | replace: ',', '' | json }},
     "availability": "https://schema.org/{% if product.selected_or_first_available_variant.available %}InStock{% else %}OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
+    "sku": {{ product.selected_or_first_available_variant.sku | default: "N/A" | json }},
+    "gtin": {{ product.selected_or_first_available_variant.barcode | default: "" | json }},
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
       "applicableCountry": "AU",
@@ -746,6 +749,33 @@
       "merchantReturnDays": 30,
       "returnMethod": "https://schema.org/ReturnByMail",
       "returnFees": "https://schema.org/FreeReturn"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0.00",
+        "currency": "{{ shop.currency }}"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "AU"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 7,
+          "unitCode": "DAY"
+        }
+      }
     }
   }
 }

@@ -97,3 +97,39 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+//Spline addition
+
+.spline-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tiles 2-3+ columns based on screen width */
+  gap: 20px; /* Space between tiles */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.spline-grid-item {
+  aspect-ratio: 16/9; /* Keeps tiles square-ish; adjust to your scenes */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional polish */
+}
+
+.spline-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 768px) {
+  .spline-grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .spline-grid-item {
+    aspect-ratio: 4/3; /* Taller on phone for better fit */
+  }
+}

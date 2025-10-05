@@ -100,7 +100,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/zZaJAdkbyec5Ntiy/scene.splinecode\"></spline-viewer>",
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/zZaJAdkbyec5Ntiy/scene.splinecode\"></spline-viewer>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0

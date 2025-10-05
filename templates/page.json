@@ -16,6 +16,16 @@
         "padding_bottom": 28
       }
     },
+    "custom_liquid_byCcYy": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-big-dark\" url=\"https://prod.spline.design/CObA-qrI-qzXoB7v/scene.splinecode\"></spline-viewer>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "newsletter_iytAXF": {
       "type": "newsletter",
       "blocks": {
@@ -52,6 +62,7 @@
   },
   "order": [
     "main",
+    "custom_liquid_byCcYy",
     "newsletter_iytAXF"
   ]
 }

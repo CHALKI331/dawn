@@ -91,16 +91,6 @@
       "type": "hexagon-infinite",
       "settings": {}
     },
-    "custom_liquid_6rmhXc": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"undefined\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "collection_list_wTKwdP": {
       "type": "collection-list",
       "blocks": {
@@ -373,7 +363,6 @@
     "image_banner",
     "rich_text",
     "hexagon_infinite_9ybjGr",
-    "custom_liquid_6rmhXc",
     "collection_list_wTKwdP",
     "vertical_timeline_QC6Fnx",
     "multicolumn",

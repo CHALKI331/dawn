@@ -56,6 +56,26 @@
         "padding_bottom": 0
       }
     },
+    "custom_liquid_ghAMhY": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/6nm8d4S3RRg2TTDG/scene.splinecode\"></spline-viewer>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_8zgmdw": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/F6ho0j0XZMHarWRV/scene.splinecode\"></spline-viewer>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "newsletter_iytAXF": {
       "type": "newsletter",
       "blocks": {
@@ -96,6 +116,8 @@
     "custom_liquid_t8VHTP",
     "custom_liquid_FETFmf",
     "custom_liquid_JidRcn",
+    "custom_liquid_ghAMhY",
+    "custom_liquid_8zgmdw",
     "newsletter_iytAXF"
   ]
 }

@@ -146,6 +146,16 @@
         "padding_bottom": 0
       }
     },
+    "custom_liquid_8mnEMW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "newsletter_iytAXF": {
       "type": "newsletter",
       "blocks": {
@@ -195,6 +205,7 @@
     "custom_liquid_dchGgy",
     "custom_liquid_mmmnTp",
     "custom_liquid_3G4AkN",
+    "custom_liquid_8mnEMW",
     "newsletter_iytAXF"
   ]
 }

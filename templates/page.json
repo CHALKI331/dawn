@@ -80,7 +80,17 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "",
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/rBdJMiV-cvqXwK3f/scene.splinecode\"></spline-viewer>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_ENGLBW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/KyqJrdSVFcwJbj68/scene.splinecode\"></spline-viewer>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0
@@ -129,6 +139,7 @@
     "custom_liquid_ghAMhY",
     "custom_liquid_8zgmdw",
     "custom_liquid_xrbTUV",
+    "custom_liquid_ENGLBW",
     "newsletter_iytAXF"
   ]
 }

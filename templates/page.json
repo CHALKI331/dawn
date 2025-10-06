@@ -39,169 +39,79 @@
             "scene_url": "",
             "class": "spline-item"
           }
+        },
+        "scene_6G8y8B": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_jpJECh": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_AAUFwm": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_4rLTK6": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_a4GreY": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_WLjFAy": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_zTWMHU": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_6Nx7fC": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
         }
       },
       "block_order": [
         "scene_Hw6t4j",
         "scene_VyYWjx",
-        "scene_C4WNGF"
+        "scene_C4WNGF",
+        "scene_6G8y8B",
+        "scene_jpJECh",
+        "scene_AAUFwm",
+        "scene_4rLTK6",
+        "scene_a4GreY",
+        "scene_WLjFAy",
+        "scene_zTWMHU",
+        "scene_6Nx7fC"
       ],
       "name": "Spline Grid",
       "settings": {}
-    },
-    "custom_liquid_byCcYy": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"none\" url=\"https://prod.spline.design/X8sWp0KWayamGLh1/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_t8VHTP": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"none\" url=\"https://prod.spline.design/IR9KKBudmmZ7TtBh/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_FETFmf": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/uCaBRUpXW407mh77/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_JidRcn": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/QzV51Kb9TqW0bnMn/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_ghAMhY": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/6nm8d4S3RRg2TTDG/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_8zgmdw": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/F6ho0j0XZMHarWRV/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_xrbTUV": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/rBdJMiV-cvqXwK3f/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_ENGLBW": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/KyqJrdSVFcwJbj68/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_tD4T4Y": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/zZaJAdkbyec5Ntiy/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_3GMTd3": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/B46PxeRY2TIubfRY/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_dchGgy": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"spinner-small-dark\" url=\"https://prod.spline.design/YuoqeK1uBPYB-2Rm/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_mmmnTp": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer loading-anim-type=\"none\" url=\"https://prod.spline.design/iXaXoJK-d-dypPNl/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_3G4AkN": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/0-MF67zQfazXJ5NV/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_8mnEMW": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.74/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/ZQQEMUqJh1PeMXx0/scene.splinecode\"></spline-viewer>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     },
     "newsletter_iytAXF": {
       "type": "newsletter",
@@ -240,20 +150,6 @@
   "order": [
     "main",
     "spline_grid_zBzMbM",
-    "custom_liquid_byCcYy",
-    "custom_liquid_t8VHTP",
-    "custom_liquid_FETFmf",
-    "custom_liquid_JidRcn",
-    "custom_liquid_ghAMhY",
-    "custom_liquid_8zgmdw",
-    "custom_liquid_xrbTUV",
-    "custom_liquid_ENGLBW",
-    "custom_liquid_tD4T4Y",
-    "custom_liquid_3GMTd3",
-    "custom_liquid_dchGgy",
-    "custom_liquid_mmmnTp",
-    "custom_liquid_3G4AkN",
-    "custom_liquid_8mnEMW",
     "newsletter_iytAXF"
   ]
 }

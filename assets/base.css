@@ -3671,21 +3671,23 @@ details-disclosure > details {
   100% { transform: translateX(-50%); }
 }
 
-/* Spline attitions
+/* Spline additions */
 .spline-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tiles 2-3+ columns based on screen width */
-  gap: 20px; /* Space between tiles */
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns on desktop */
+  grid-auto-rows: minmax(250px, auto); /* Ensures consistent row heights; adjust min if your scenes need more space */
+  gap: 20px;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 1200px; /* Fits 3 columns comfortably; scales down on smaller desktops */
   margin: 0 auto;
 }
 
 .spline-grid-item {
-  aspect-ratio: 16/9; /* Keeps tiles square-ish; adjust to your scenes */
+  aspect-ratio: 1 / 1; /* Square tiles for a clean 3x3 look; change to 16/9 if your scenes are landscape */
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional polish */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex; /* Helps center the viewer if needed */
 }
 
 .spline-wrapper {
@@ -3693,15 +3695,29 @@ details-disclosure > details {
   height: 100%;
 }
 
-/* Mobile: Stack vertically */
+/* Tablet: 2 columns for medium screens */
+@media (max-width: 1024px) {
+  .spline-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+  .spline-grid-item {
+    aspect-ratio: 16/10; /* Slightly wider for tablets */
+  }
+}
+
+/* Mobile: Single scalable column */
 @media (max-width: 768px) {
   .spline-grid-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Full-width single column */
+    grid-auto-rows: minmax(200px, auto); /* Shorter rows for faster scroll */
     gap: 10px;
     padding: 10px;
+    max-width: 100%; /* Scales to full phone width */
   }
-
   .spline-grid-item {
-    aspect-ratio: 4/3; /* Taller on phone for better fit */
+    aspect-ratio: 4/3; /* Taller portrait fit for phones */
   }
+}
 }

@@ -57,42 +57,7 @@
         "scene_AAUFwm": {
           "type": "scene",
           "settings": {
-            "scene_url": "",
-            "class": "spline-item"
-          }
-        },
-        "scene_4rLTK6": {
-          "type": "scene",
-          "settings": {
-            "scene_url": "",
-            "class": "spline-item"
-          }
-        },
-        "scene_a4GreY": {
-          "type": "scene",
-          "settings": {
-            "scene_url": "",
-            "class": "spline-item"
-          }
-        },
-        "scene_WLjFAy": {
-          "type": "scene",
-          "settings": {
-            "scene_url": "",
-            "class": "spline-item"
-          }
-        },
-        "scene_zTWMHU": {
-          "type": "scene",
-          "settings": {
-            "scene_url": "",
-            "class": "spline-item"
-          }
-        },
-        "scene_6Nx7fC": {
-          "type": "scene",
-          "settings": {
-            "scene_url": "",
+            "scene_url": "https://prod.spline.design/F6ho0j0XZMHarWRV/scene.splinecode",
             "class": "spline-item"
           }
         }
@@ -103,12 +68,7 @@
         "scene_C4WNGF",
         "scene_6G8y8B",
         "scene_jpJECh",
-        "scene_AAUFwm",
-        "scene_4rLTK6",
-        "scene_a4GreY",
-        "scene_WLjFAy",
-        "scene_zTWMHU",
-        "scene_6Nx7fC"
+        "scene_AAUFwm"
       ],
       "name": "Spline Grid",
       "settings": {}

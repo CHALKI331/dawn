@@ -60,6 +60,90 @@
             "scene_url": "https://prod.spline.design/F6ho0j0XZMHarWRV/scene.splinecode",
             "class": "spline-item"
           }
+        },
+        "scene_Y6YULL": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_pkdyiH": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_tKt9Uk": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_ikekLL": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_Mc6HHg": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_t4jAGH": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_kMwEMB": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_CR4XYJ": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_gGJgT3": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_JrCUdK": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_ViPtjG": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
+        },
+        "scene_KPya6R": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "",
+            "class": "spline-item"
+          }
         }
       },
       "block_order": [
@@ -68,7 +152,19 @@
         "scene_C4WNGF",
         "scene_6G8y8B",
         "scene_jpJECh",
-        "scene_AAUFwm"
+        "scene_AAUFwm",
+        "scene_Y6YULL",
+        "scene_pkdyiH",
+        "scene_tKt9Uk",
+        "scene_ikekLL",
+        "scene_Mc6HHg",
+        "scene_t4jAGH",
+        "scene_kMwEMB",
+        "scene_CR4XYJ",
+        "scene_gGJgT3",
+        "scene_JrCUdK",
+        "scene_ViPtjG",
+        "scene_KPya6R"
       ],
       "name": "Spline Grid",
       "settings": {}

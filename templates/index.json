@@ -87,6 +87,16 @@
         "padding_bottom": 0
       }
     },
+    "custom_liquid_L4hnMh": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"module\" src=\"https://unpkg.com/@splinetool/viewer@1.10.75/build/spline-viewer.js\"></script>\n<spline-viewer url=\"https://prod.spline.design/VKm9A6PLdOHJGkPS/scene.splinecode\"></spline-viewer>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "hexagon_infinite_9ybjGr": {
       "type": "hexagon-infinite",
       "settings": {}
@@ -362,6 +372,7 @@
   "order": [
     "image_banner",
     "rich_text",
+    "custom_liquid_L4hnMh",
     "hexagon_infinite_9ybjGr",
     "collection_list_wTKwdP",
     "vertical_timeline_QC6Fnx",

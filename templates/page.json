@@ -40,6 +40,13 @@
             "class": "spline-item"
           }
         },
+        "scene_bmDD9i": {
+          "type": "scene",
+          "settings": {
+            "scene_url": "https://prod.spline.design/rBdJMiV-cvqXwK3f/scene.splinecode",
+            "class": "spline-item"
+          }
+        },
         "scene_6G8y8B": {
           "type": "scene",
           "settings": {
@@ -150,6 +157,7 @@
         "scene_Hw6t4j",
         "scene_VyYWjx",
         "scene_C4WNGF",
+        "scene_bmDD9i",
         "scene_6G8y8B",
         "scene_jpJECh",
         "scene_AAUFwm",

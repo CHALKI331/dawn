@@ -17,8 +17,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Click here to sign up for further product release and seasonal deals.",
-            "link": "shopify://pages/newsletter"
+            "text": "Buy 2 Get 1 FREE Camouflage Model!",
+            "link": "shopify://collections/spack-au-camouflage-models"
           }
         }
       },

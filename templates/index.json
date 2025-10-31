@@ -23,7 +23,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "https://risingsunfpv.com.au/collections/spack-au",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -99,6 +99,7 @@
     },
     "hexagon_infinite_9ybjGr": {
       "type": "hexagon-infinite",
+      "disabled": true,
       "settings": {}
     },
     "collection_list_wTKwdP": {

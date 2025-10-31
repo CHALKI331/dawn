@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/Spack.au_3D_Printing_-_1.png",
-    "logo_width": 150,
+    "logo": "shopify://shop_images/Untitled_design_10_bb25e0a9-99c1-40e6-ae98-7835a3be11c8.png",
+    "logo_width": 300,
     "favicon": "shopify://shop_images/Spack_Industries.svg",
     "type_header_font": "helvetica_n4",
     "heading_scale": 100,
@@ -197,11 +197,6 @@
           "side_class": "ptpl_sidebtn_look",
           "ptpl_sideform": "ptpl_sideform_look"
         }
-      },
-      "pagefly-page-builder": {
-        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
-        "disabled": false,
-        "settings": {}
       }
     },
     "color_schemes": {

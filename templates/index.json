@@ -150,6 +150,7 @@
         "featured_collection_6k8jfw",
         "featured_collection_YJQxnd"
       ],
+      "disabled": true,
       "settings": {
         "title": "Collections",
         "heading_size": "h1",
@@ -343,7 +344,7 @@
           "settings": {
             "heading": "Shipping",
             "icon": "truck",
-            "row_content": "<p>Free standard shipping and Express for free orders over $300 calculated at the checkout.</p><p>All items are shipped from Townsville, QLD.</p><p>Shipping World Wide - coming soon.</p>",
+            "row_content": "<p>Free standard shipping and Express for free orders over $300 calculated at the checkout.</p><p>All items are shipped from Townsville, QLD.</p><p>Shipping World Wide</p>",
             "page": ""
           }
         }

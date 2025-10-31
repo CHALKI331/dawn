@@ -19,29 +19,29 @@
             "heading_size": "hxxl"
           }
         },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "https://risingsunfpv.com.au/collections/spack-au",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
             "text": "Looking to “convey your intent” and enhance your next set of orders?",
             "text_style": "body"
           }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop at Rising Sun FPV",
+            "button_link_1": "https://risingsunfpv.com.au/collections/spack-au",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
         "heading",
-        "button",
-        "text"
+        "text",
+        "button"
       ],
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-02-23_at_22.44.04.png",

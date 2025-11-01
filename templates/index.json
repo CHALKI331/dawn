@@ -87,6 +87,41 @@
         "padding_bottom": 0
       }
     },
+    "176195542980c3fa88": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f8f56b7_YctJee": {
+          "type": "ai_gen_block_f8f56b7",
+          "settings": {
+            "image_1": "shopify://shop_images/IMG_5597.jpg",
+            "image_2": "shopify://shop_images/IMG_57922.jpg",
+            "image_3": "shopify://shop_images/IMG_4804_2538ea6c-274c-4572-8e32-54acde1ed7c0.jpg",
+            "image_4": "shopify://shop_images/IMG_4985.jpg",
+            "image_5": "shopify://shop_images/IMG_3529.jpg",
+            "image_6": "shopify://shop_images/IMG_4649.jpg",
+            "image_7": "shopify://shop_images/IMG_4822.jpg",
+            "image_8": "shopify://shop_images/40M_TPAv1.png",
+            "image_9": "shopify://shop_images/IMG_5358.jpg",
+            "max_width": 1200,
+            "padding": 40,
+            "gap": 16,
+            "aspect_ratio": "4 / 3",
+            "border_radius": 0,
+            "background_color": "#ffffff",
+            "button_color": "#252422",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#656d4a",
+            "dot_color": "#cccccc",
+            "dot_active_color": "#252422"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f8f56b7_YctJee"
+      ],
+      "settings": {}
+    },
     "custom_liquid_L4hnMh": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -374,6 +409,7 @@
   "order": [
     "image_banner",
     "rich_text",
+    "176195542980c3fa88",
     "custom_liquid_L4hnMh",
     "hexagon_infinite_9ybjGr",
     "collection_list_wTKwdP",
